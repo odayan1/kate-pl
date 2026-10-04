@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KATEぷら | 山梨市の少人数個別学習塾</title>
+<meta name="description" content="KATEぷらは、家庭教師歴10年以上のプロ講師による「質」と、少人数演習による「量」を両立した学習サポート。山梨市駅前。">
+<meta property="og:title" content="KATEぷら | 山梨市の少人数個別学習塾">
+<meta property="og:description" content="「わかったつもり」で、終わっていませんか？">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kate-pl.com/">
+<link rel="icon" href="assets/logo-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sky:#cdeffc; --shallow:#7ecbe0; --mid:#2d93b8; --deep:#0d4a66; --abyss:#082d3f; --dark:#04141d;
+  --sun:#f3cf1f; --sun-deep:#caa600; --kelp:#6fae3a;
+  --ink:#122733;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:auto}
+body{
+  font-family:'Noto Sans JP',sans-serif;color:#fff;line-height:1.9;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+.zen{font-family:'Zen Kaku Gothic New',sans-serif}
+a{color:inherit;text-decoration:none}
+
+/* ===== fixed depth background ===== */
+#depth-bg{position:fixed;inset:0;z-index:-3;background:var(--sky)}
+#bubbles{position:fixed;inset:0;z-index:-2;pointer-events:none;overflow:hidden;opacity:.5}
+.bubble{position:absolute;bottom:-10%;border-radius:50%;background:rgba(255,255,255,.35);animation:rise linear infinite}
+@keyframes rise{from{transform:translateY(0) translateX(0)}to{transform:translateY(-120vh) translateX(var(--drift,20px))}}
+
+/* ===== custom cursor ===== */
+#cursor{pointer-events:none;position:fixed;top:0;left:0;z-index:9999;width:14px;height:14px;border-radius:50%;background:#fff;opacity:0;transform:translate(-50%,-50%);transition:opacity .25s ease,width .2s,height .2s,background .2s;mix-blend-mode:screen}
+#cursor.hov{width:36px;height:36px;background:var(--sun)}
+@media(hover:none),(pointer:coarse){#cursor{display:none}}
+
+/* ===== mini logo ===== */
+.mini-logo{position:fixed;top:20px;left:clamp(20px,4vw,40px);z-index:50;opacity:0;animation:fadeIn 1s ease 1.2s forwards}
+.mini-logo img{height:34px;filter:drop-shadow(0 2px 8px rgba(0,0,0,.3))}
+@keyframes fadeIn{to{opacity:1}}
+
+/* ===== scenes ===== */
+.scene{min-height:100svh;display:flex;align-items:center;justify-content:center;position:relative;padding:60px clamp(20px,6vw,60px);text-align:center;overflow:hidden}
+.scene__inner{position:relative;z-index:3;max-width:680px}
+.kicker{display:inline-flex;align-items:center;gap:10px;color:var(--sun);font-weight:900;font-size:.76rem;letter-spacing:.22em;margin-bottom:20px;text-transform:uppercase}
+.kicker::before,.kicker::after{content:"";width:24px;height:1px;background:var(--sun)}
+.kicker .jp{color:#fff;opacity:.9;text-transform:none;letter-spacing:.05em;margin-right:4px}
+.scene h1,.scene h2{font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;line-height:1.55;text-shadow:0 6px 24px rgba(0,0,0,.35)}
+.scene h1{font-size:clamp(1.7rem,5vw,3rem)}
+.scene h2{font-size:clamp(1.4rem,3.8vw,2.2rem)}
+.scene em{font-style:normal;color:var(--sun)}
+.scene p.lead{margin-top:18px;font-size:clamp(.92rem,1.6vw,1.05rem);color:rgba(255,255,255,.88)}
+.eng{display:block;font-family:'Zen Kaku Gothic New',sans-serif;font-size:clamp(.68rem,1.4vw,.8rem);letter-spacing:.24em;font-weight:700;color:var(--sun);opacity:.75;margin-top:10px;text-transform:uppercase}
+#s-hero .eng{color:var(--mid)}
+.deep-link{display:inline-flex;align-items:center;gap:8px;margin-top:30px;font-size:.84rem;font-weight:700;color:rgba(255,255,255,.85);border-bottom:1px solid rgba(255,255,255,.4);padding-bottom:3px;transition:color .25s,border-color .25s}
+.deep-link:hover{color:var(--sun);border-color:var(--sun)}
+
+.rv{opacity:0;transform:translateY(22px);filter:blur(4px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.65,.2,1),filter .9s ease}
+.scene.armed .rv{opacity:1;transform:none;filter:blur(0)}
+.scene.armed .rv:nth-child(2){transition-delay:.12s}
+.scene.armed .rv:nth-child(3){transition-delay:.24s}
+.scene.armed .rv:nth-child(4){transition-delay:.36s}
+
+/* ===== hero (sky) ===== */
+#s-hero{color:var(--ink)}
+.hero__logo{width:min(320px,70vw);margin:0 auto 10px;opacity:0;animation:logoIn 1s ease .1s forwards}
+@keyframes logoIn{from{opacity:0;transform:translateY(-14px) scale(.92)}to{opacity:1;transform:none}}
+.hero__logo video{width:100%;display:block;mix-blend-mode:multiply}
+#s-hero h1{color:var(--ink);text-shadow:none}
+#s-hero p.lead{color:#2a4654}
+.scroll-hint{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);font-size:.68rem;letter-spacing:.3em;color:rgba(18,39,51,.55);display:flex;flex-direction:column;align-items:center;gap:10px;z-index:3}
+.scroll-hint::after{content:"";width:1px;height:38px;background:linear-gradient(rgba(18,39,51,.5),transparent);animation:drop 1.8s infinite}
+@keyframes drop{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* ===== final (abyss nav-out) ===== */
+#s-final{text-align:left;align-items:flex-start}
+#s-final .scene__inner{max-width:760px;width:100%;margin:0 auto;text-align:center}
+.dive-list{margin-top:50px;text-align:left}
+.dive-item{display:grid;grid-template-columns:70px 1fr auto;align-items:center;gap:22px;padding:22px 0;border-top:1px solid rgba(255,255,255,.14);transition:background .25s}
+.dive-item:last-child{border-bottom:1px solid rgba(255,255,255,.14)}
+.dive-item:hover{background:rgba(255,255,255,.04)}
+.dive-num{font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:1.6rem;color:transparent;-webkit-text-stroke:1.3px var(--sun);opacity:.8}
+.dive-body b{display:block;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:1.05rem;margin-bottom:4px}
+.dive-body span{font-size:.82rem;color:rgba(255,255,255,.65)}
+.dive-arrow{font-size:1.2rem;color:var(--sun);transition:transform .25s}
+.dive-item:hover .dive-arrow{transform:translateX(6px)}
+@media(max-width:600px){.dive-item{grid-template-columns:40px 1fr auto;gap:12px}}
+
+.footer{background:var(--dark);color:rgba(255,255,255,.5);padding:34px 0;text-align:center;font-size:.78rem;position:relative;z-index:3}
+.footer img{height:28px;margin:0 auto 12px;filter:brightness(0) invert(1);opacity:.75}
+
+/* ===== fish =====
+   The idle swim keyframes and the "flee" transform must live on DIFFERENT
+   elements. A paused CSS animation keeps holding its last transform value
+   and will silently out-rank a transition set on the same property/element,
+   so .fish-group (outer, handles flee) wraps .fish-swim (inner, handles idle swim). */
+.fish-layer{position:absolute;inset:0;z-index:1;pointer-events:none}
+.fish-group{position:absolute;pointer-events:none;transform-origin:center;transition:transform .85s cubic-bezier(.22,.82,.24,1),opacity .4s ease}
+.fish-group.dart{transform:translate(var(--dx,240px),var(--dy,-120px)) scale(.92) rotate(var(--rot,-10deg));opacity:.92}
+.fish-swim{display:block;transform-origin:center}
+.fish-group .fish-hit{pointer-events:auto;cursor:default}
+.fish-group .fish-body{transition:transform .3s ease}
+.fish-group.dart .fish-body{transform:scaleX(1.12)}
+.tierA .fish-body{fill:var(--sun)}
+.tierA2 .fish-body{fill:var(--kelp)}
+.tierShark .fish-body{fill:#4f7488}
+.tierShark .fish-body .belly{fill:#cfe6ee}
+.tierC .fish-body{fill:#04141d}
+.tierC .lure{fill:var(--sun);filter:drop-shadow(0 0 5px var(--sun)) drop-shadow(0 0 10px var(--sun));animation:glow 2.2s ease-in-out infinite}
+@keyframes glow{0%,100%{opacity:.55}50%{opacity:1}}
+@keyframes swimA{0%,100%{transform:translate(0,0) rotate(0)}50%{transform:translate(70px,-26px) rotate(-5deg)}}
+@keyframes swimB{0%,100%{transform:translate(0,0) rotate(0)}50%{transform:translate(-80px,20px) rotate(4deg)}}
+@keyframes swimC{0%,100%{transform:translate(0,0) rotate(0)}50%{transform:translate(46px,34px) rotate(3deg)}}
+@keyframes swimShark{0%,100%{transform:translate(0,0) rotate(0)}50%{transform:translate(-100px,16px) rotate(-2deg)}}
+</style>
+</head>
+<body>
+
+<div id="cursor"></div>
+<div id="depth-bg"></div>
+<div id="bubbles"></div>
+
+<a href="#s-hero" class="mini-logo"><img src="assets/logo-wide.png" alt="KATEぷら"></a>
+
+<!-- symbol defs for fish -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="fishA" viewBox="-10 -16 70 32">
+      <path d="M4,0 C4,-9 16,-13 28,-13 C40,-13 50,-7 54,0 C50,7 40,13 28,13 C16,13 4,9 4,0 Z"/>
+      <path d="M4,0 L-9,-9 L-9,9 Z"/>
+      <circle cx="40" cy="-3" r="1.8" fill="#fff"/>
+    </symbol>
+    <symbol id="fishAngler" viewBox="-14 -24 86 46">
+      <path d="M8,2 C8,-9 22,-15 36,-15 C50,-15 60,-7 64,2 C60,11 50,19 36,19 C22,19 8,13 8,2 Z"/>
+      <path d="M8,2 L-10,-9 L-10,13 Z"/>
+      <path d="M30,-13 C28,-21 36,-24 38,-24" stroke="currentColor" stroke-width="2" fill="none" class="lure-stalk"/>
+      <circle class="lure" cx="39" cy="-24.5" r="3"/>
+      <circle cx="46" cy="0" r="1.8" fill="#fff"/>
+    </symbol>
+    <symbol id="fishShark" viewBox="-18 -30 112 54">
+      <path d="M-12,0 C-12,-11 10,-19 34,-19 C56,-19 70,-10 76,0 C70,10 56,19 34,19 C10,19 -12,11 -12,0 Z"/>
+      <path class="belly" d="M-6,4 C2,10 18,15 34,15 C48,15 58,11 64,6 C56,13 44,17 32,17 C14,17 0,12 -6,4 Z"/>
+      <path d="M76,0 L92,-15 L82,0 L92,15 Z"/>
+      <path d="M28,-19 L36,-31 L44,-19 Z"/>
+      <path d="M18,15 L8,25 L30,17 Z"/>
+      <circle cx="56" cy="-3" r="1.8" fill="#fff"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- SCENE 0: HERO / SKY -->
+<section class="scene armed" id="s-hero" data-depth="0">
+  <div class="scene__inner">
+    <div class="hero__logo"><video autoplay muted playsinline><source src="assets/hero.mp4" type="video/mp4"></video></div>
+    <h1 class="zen rv">「わかったつもり」で、<br>終わっていませんか？</h1>
+    <span class="eng rv">Are you only skimming the surface?</span>
+    <p class="lead rv">一歩ずつ、下へ。KATEぷらの景色を見てください。</p>
+  </div>
+  <div class="scroll-hint">SCROLL</div>
+</section>
+
+<!-- SCENE 1: SHALLOW — 想い -->
+<section class="scene" id="s-1" data-depth="1">
+  <div class="fish-layer">
+    <div class="fish-group tierA" style="left:10%;top:26%">
+      <div class="fish-swim" style="animation:swimA 5.4s ease-in-out infinite"><svg class="fish-body" width="64" height="32" viewBox="-10 -16 70 32" style="overflow:visible"><circle class="fish-hit" cx="28" cy="0" r="34" fill="transparent"/><use href="#fishA"/></svg></div>
+    </div>
+    <div class="fish-group tierA2" style="right:16%;top:48%">
+      <div class="fish-swim" style="animation:swimB 6.6s ease-in-out infinite .4s"><svg class="fish-body" width="50" height="26" viewBox="-10 -16 70 32" style="overflow:visible"><circle class="fish-hit" cx="28" cy="0" r="28" fill="transparent"/><use href="#fishA"/></svg></div>
+    </div>
+    <div class="fish-group tierA" style="left:30%;top:70%">
+      <div class="fish-swim" style="animation:swimC 7.4s ease-in-out infinite .9s"><svg class="fish-body" width="42" height="22" viewBox="-10 -16 70 32" style="overflow:visible"><circle class="fish-hit" cx="28" cy="0" r="26" fill="transparent"/><use href="#fishA"/></svg></div>
+    </div>
+  </div>
+  <div class="scene__inner">
+    <div class="kicker rv">01 <span class="jp">— 想い</span> Philosophy</div>
+    <h2 class="zen rv">自学学習に、<em>プラチナ</em>をプラス。</h2>
+    <span class="eng rv">Quality × Quantity</span>
+    <p class="lead rv">「質」の高い指導と、「量」をこなす演習。どちらもあきらめません。</p>
+    <a href="about.html" class="deep-link rv">想いを読む →</a>
+  </div>
+</section>
+
+<!-- SCENE 2: MID — 指導法 -->
+<section class="scene" id="s-2" data-depth="2">
+  <div class="fish-layer">
+    <div class="fish-group tierA2" style="left:14%;top:20%"><div class="fish-swim" style="animation:swimC 6s ease-in-out infinite"><svg class="fish-body" width="50" height="26" viewBox="-10 -16 70 32" style="overflow:visible"><circle class="fish-hit" cx="28" cy="0" r="28" fill="transparent"/><use href="#fishA"/></svg></div></div>
+    <div class="fish-group tierShark" style="right:6%;top:52%"><div class="fish-swim" style="animation:swimShark 11s ease-in-out infinite .5s"><svg class="fish-body" width="118" height="58" viewBox="-18 -30 112 54" style="overflow:visible"><circle class="fish-hit" cx="40" cy="0" r="56" fill="transparent"/><use href="#fishShark"/></svg></div></div>
+  </div>
+  <div class="scene__inner">
+    <div class="kicker rv">02 <span class="jp">— 指導法</span> Method</div>
+    <h2 class="zen rv">敷かれたレールに乗るだけで、<em>伸びていく</em>仕組み。</h2>
+    <span class="eng rv">Designed by professionals</span>
+    <p class="lead rv">やみくもな勉強はもう終わり。プロが最短経路を設計します。</p>
+    <a href="method.html" class="deep-link rv">指導法を見る →</a>
+  </div>
+</section>
+
+<!-- SCENE 3: DEEP — 実績 -->
+<section class="scene" id="s-3" data-depth="3">
+  <div class="fish-layer">
+    <div class="fish-group tierShark" style="left:4%;top:24%"><div class="fish-swim" style="animation:swimShark 9.5s ease-in-out infinite"><svg class="fish-body" width="96" height="48" viewBox="-18 -30 112 54" style="overflow:visible"><circle class="fish-hit" cx="40" cy="0" r="48" fill="transparent"/><use href="#fishShark"/></svg></div></div>
+    <div class="fish-group tierC" style="right:12%;top:60%"><div class="fish-swim" style="animation:swimC 9s ease-in-out infinite .5s"><svg class="fish-body" width="76" height="40" viewBox="-14 -24 86 46" style="overflow:visible;color:#04141d"><circle class="fish-hit" cx="28" cy="2" r="40" fill="transparent"/><use href="#fishAngler"/></svg></div></div>
+  </div>
+  <div class="scene__inner">
+    <div class="kicker rv">03 <span class="jp">— 実績</span> Results</div>
+    <h2 class="zen rv">点数は、<em>ちゃんと</em>変わる。</h2>
+    <span class="eng rv">Results that actually show</span>
+    <p class="lead rv">定期テスト30点台から、6ヶ月後に英検準2級へ。</p>
+    <a href="results.html" class="deep-link rv">実績を見る →</a>
+  </div>
+</section>
+
+<!-- SCENE 4: DEEPER — 料金 -->
+<section class="scene" id="s-4" data-depth="4">
+  <div class="fish-layer">
+    <div class="fish-group tierC" style="left:14%;top:26%"><div class="fish-swim" style="animation:swimA 8.5s ease-in-out infinite"><svg class="fish-body" width="70" height="36" viewBox="-14 -24 86 46" style="overflow:visible;color:#04141d"><circle class="fish-hit" cx="28" cy="2" r="38" fill="transparent"/><use href="#fishAngler"/></svg></div></div>
+    <div class="fish-group tierC" style="right:16%;top:64%"><div class="fish-swim" style="animation:swimB 7.8s ease-in-out infinite .3s"><svg class="fish-body" width="60" height="32" viewBox="-14 -24 86 46" style="overflow:visible;color:#04141d"><circle class="fish-hit" cx="28" cy="2" r="34" fill="transparent"/><use href="#fishAngler"/></svg></div></div>
+  </div>
+  <div class="scene__inner">
+    <div class="kicker rv">04 <span class="jp">— 料金</span> Pricing</div>
+    <h2 class="zen rv">料金は、<em>シンプル</em>に。</h2>
+    <span class="eng rv">Simple, flat-rate pricing</span>
+    <p class="lead rv">5教科まとめて定額。教科が増えても、追加料金はありません。</p>
+    <a href="pricing.html" class="deep-link rv">料金プランを見る →</a>
+  </div>
+</section>
+
+<!-- SCENE 5: ABYSS — final nav-out -->
+<section class="scene" id="s-final" data-depth="5">
+  <div class="fish-layer">
+    <div class="fish-group tierC" style="left:6%;top:14%"><div class="fish-swim" style="animation:swimC 10s ease-in-out infinite"><svg class="fish-body" width="52" height="28" viewBox="-14 -24 86 46" style="overflow:visible;color:#04141d"><circle class="fish-hit" cx="28" cy="2" r="30" fill="transparent"/><use href="#fishAngler"/></svg></div></div>
+  </div>
+  <div class="scene__inner">
+    <div class="kicker rv">Dive Deeper</div>
+    <h2 class="zen rv">もっと深く、知ってください。</h2>
+    <span class="eng rv">Explore KATEぷら</span>
+    <div class="dive-list rv">
+      <a href="about.html" class="dive-item"><span class="dive-num zen">01</span><span class="dive-body"><b class="zen">想い</b><span>自学学習に、プラチナをプラス。</span></span><span class="dive-arrow">→</span></a>
+      <a href="method.html" class="dive-item"><span class="dive-num zen">02</span><span class="dive-body"><b class="zen">指導法</b><span>敷かれたレールに乗るだけで伸びる仕組み。</span></span><span class="dive-arrow">→</span></a>
+      <a href="results.html" class="dive-item"><span class="dive-num zen">03</span><span class="dive-body"><b class="zen">実績</b><span>プロの家庭教師×演習だから伸びる。</span></span><span class="dive-arrow">→</span></a>
+      <a href="pricing.html" class="dive-item"><span class="dive-num zen">04</span><span class="dive-body"><b class="zen">料金</b><span>5教科まとめて、シンプルな月謝制。</span></span><span class="dive-arrow">→</span></a>
+      <a href="faq.html" class="dive-item"><span class="dive-num zen">05</span><span class="dive-body"><b class="zen">よくある質問</b><span>疑問にひとつずつお答えします。</span></span><span class="dive-arrow">→</span></a>
+      <a href="contact.html" class="dive-item"><span class="dive-num zen">06</span><span class="dive-body"><b class="zen">お問い合わせ</b><span>無料学習相談のお申し込みはこちら。</span></span><span class="dive-arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <img src="assets/logo-wide.png" alt="KATEぷら">
+  © 2026 KATEぷら — kate-pl.com
+</footer>
+
+<script>
+/* ===== depth background: continuous color lerp across scroll ===== */
+const stops = ['#cdeffc','#7ecbe0','#2d93b8','#0d4a66','#082d3f','#04141d'];
+function hex2rgb(h){h=h.replace('#','');return [parseInt(h.slice(0,2),16),parseInt(h.slice(2,4),16),parseInt(h.slice(4,6),16)];}
+const stopsRgb = stops.map(hex2rgb);
+const bg = document.getElementById('depth-bg');
+let ticking = false;
+function updateDepth(){
+  const max = document.documentElement.scrollHeight - innerHeight;
+  const progress = max > 0 ? Math.min(1, Math.max(0, scrollY / max)) : 0;
+  const seg = progress * (stopsRgb.length - 1);
+  const i = Math.min(stopsRgb.length - 2, Math.floor(seg));
+  const t = seg - i;
+  const a = stopsRgb[i], b = stopsRgb[i+1];
+  const r = Math.round(a[0] + (b[0]-a[0])*t);
+  const g = Math.round(a[1] + (b[1]-a[1])*t);
+  const bl = Math.round(a[2] + (b[2]-a[2])*t);
+  bg.style.background = `rgb(${r},${g},${bl})`;
+  ticking = false;
+}
+addEventListener('scroll', () => { if(!ticking){ticking=true; requestAnimationFrame(updateDepth);} }, {passive:true});
+updateDepth();
+
+/* ===== scene arm on view ===== */
+const scenes = [...document.querySelectorAll('.scene')];
+const io = new IntersectionObserver(es => {
+  es.forEach(e => { if (e.isIntersecting) e.target.classList.add('armed'); });
+}, {threshold:.4});
+scenes.forEach(s => io.observe(s));
+const resetIo = new IntersectionObserver(es => {
+  es.forEach(e => { if (!e.isIntersecting && e.target.id !== 's-hero') e.target.classList.remove('armed'); });
+}, {threshold:0});
+scenes.forEach(s => resetIo.observe(s));
+
+/* ===== bubbles ===== */
+const bubbleLayer = document.getElementById('bubbles');
+for (let i=0;i<22;i++){
+  const b = document.createElement('div');
+  b.className = 'bubble';
+  const size = 4 + Math.random()*10;
+  b.style.width = size+'px'; b.style.height = size+'px';
+  b.style.left = (Math.random()*100)+'%';
+  b.style.setProperty('--drift', (Math.random()*60-30)+'px');
+  b.style.animationDuration = (10+Math.random()*14)+'s';
+  b.style.animationDelay = (Math.random()*14)+'s';
+  bubbleLayer.appendChild(b);
+}
+
+/* ===== fish dart away when cursor nears ===== */
+const fishGroups = [...document.querySelectorAll('.fish-group')];
+function checkFish(x,y){
+  fishGroups.forEach(g => {
+    if (g.classList.contains('dart')) return;
+    const r = g.querySelector('.fish-hit').getBoundingClientRect();
+    const cx = r.left + r.width/2, cy = r.top + r.height/2;
+    if (Math.hypot(x-cx, y-cy) < 90) {
+      const fleeRight = x < cx;
+      const dx = (fleeRight ? 1 : -1) * (220 + Math.random()*110);
+      const dy = (Math.random()*2-1) * 120 - 30;
+      const rot = fleeRight ? -(8+Math.random()*10) : (8+Math.random()*10);
+      g.style.setProperty('--dx', dx+'px');
+      g.style.setProperty('--dy', dy+'px');
+      g.style.setProperty('--rot', rot+'deg');
+      g.classList.add('dart');
+      setTimeout(() => g.classList.remove('dart'), 3200);
+    }
+  });
+}
+
+/* ===== custom cursor ===== */
+const cur = document.getElementById('cursor');
+let shown = false;
+addEventListener('mousemove', e => {
+  if(!shown){cur.style.opacity=.85;shown=true}
+  cur.style.left = e.clientX+'px'; cur.style.top = e.clientY+'px';
+  checkFish(e.clientX, e.clientY);
+});
+addEventListener('mouseout', e => { if(!e.relatedTarget){cur.style.opacity=0;shown=false} });
+document.querySelectorAll('a,.fish-hit').forEach(el => {
+  el.addEventListener('mouseenter', () => cur.classList.add('hov'));
+  el.addEventListener('mouseleave', () => cur.classList.remove('hov'));
+});
+
+/* smooth anchor scroll */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) { e.preventDefault(); t.scrollIntoView({behavior:'smooth'}); }
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>指導法 | KATEぷら</title>
+<meta name="description" content="敷かれたレールに乗るだけで伸びていく。KATEぷらの指導法：最短経路のプランニング・能動的巡回指導・目的を共有する指導。">
+<link rel="icon" href="assets/logo-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--shallow:#7ecbe0;--mid:#2d93b8;--deep:#0d4a66;--abyss:#082d3f;--foam:#eff8fb;--sun:#f3cf1f;--sun-deep:#caa600;--kelp:#6fae3a;--kelp-deep:#548623;--ink:#122733;--ink-soft:#4f6b78;--paper:#ffffff;--line:rgba(13,74,102,.14);}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--ink);background:var(--paper);line-height:1.9;-webkit-font-smoothing:antialiased}
+.zen{font-family:'Zen Kaku Gothic New',sans-serif}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:900px;margin:0 auto;padding:0 clamp(20px,5vw,60px)}
+.nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:12px clamp(20px,5vw,60px);background:rgba(255,255,255,.94);backdrop-filter:blur(10px);box-shadow:0 2px 16px rgba(13,74,102,.08);gap:20px;flex-wrap:wrap}
+.nav__logo img{height:38px}
+.nav__links{display:flex;gap:24px;font-size:.84rem;font-weight:700}
+.nav__links a{color:var(--ink-soft);transition:color .2s}
+.nav__links a:hover,.nav__links a.on{color:var(--mid)}
+.nav__cta{background:var(--sun);color:var(--ink);font-weight:900;font-size:.8rem;padding:9px 18px;border-radius:999px;white-space:nowrap}
+@media(max-width:780px){.nav__links{display:none}}
+.pg-hero{background:linear-gradient(160deg,var(--deep),var(--abyss));color:#fff;padding:70px 0 60px;text-align:center}
+.pg-hero .sec-kicker{display:inline-flex;align-items:center;gap:10px;color:var(--sun);font-weight:900;font-size:.78rem;letter-spacing:.22em;margin-bottom:16px;justify-content:center}
+.pg-hero .sec-kicker::before{content:"";width:30px;height:1px;background:var(--sun)}
+.pg-hero h1{font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:clamp(1.6rem,4.2vw,2.4rem);line-height:1.5}
+.pg-hero p{color:rgba(255,255,255,.82);margin-top:16px;max-width:560px;margin-left:auto;margin-right:auto}
+main{padding:70px 0}
+.ed-item{display:grid;grid-template-columns:96px 1fr;gap:30px;padding:34px 0;border-top:1px solid var(--line)}
+.ed-item:last-child{border-bottom:1px solid var(--line)}
+.ed-num{font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:2.4rem;color:transparent;-webkit-text-stroke:1.5px var(--mid);line-height:1}
+.ed-item:nth-child(2) .ed-num{-webkit-text-stroke-color:var(--kelp-deep)}
+.ed-item:nth-child(3) .ed-num{-webkit-text-stroke-color:var(--sun-deep)}
+.ed-body h3{font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:1.1rem;margin-bottom:12px;line-height:1.6}
+.ed-body p{font-size:.92rem;color:var(--ink-soft);max-width:620px}
+@media(max-width:620px){.ed-item{grid-template-columns:1fr;gap:10px}.ed-num{font-size:1.6rem}}
+.cta-block{margin-top:60px;text-align:center}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 36px;border-radius:999px;font-weight:900;font-size:.92rem;background:var(--sun);color:var(--ink);transition:transform .25s,box-shadow .25s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(243,207,31,.4)}
+.footer{background:#06212f;color:rgba(255,255,255,.55);padding:36px 0;text-align:center;font-size:.8rem}
+.footer img{height:30px;margin:0 auto 12px;filter:brightness(0) invert(1);opacity:.8}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav__logo"><img src="assets/logo-wide.png" alt="KATEぷら"></a>
+  <div class="nav__links">
+    <a href="about.html">想い</a>
+    <a href="method.html" class="on">指導法</a>
+    <a href="results.html">実績</a>
+    <a href="pricing.html">料金</a>
+    <a href="faq.html">よくある質問</a>
+  </div>
+  <a href="contact.html" class="nav__cta">無料学習相談</a>
+</nav>
+
+<header class="pg-hero">
+  <div class="wrap">
+    <span class="sec-kicker">Our Method</span>
+    <h1 class="zen">「敷かれたレール」に乗るだけで、伸びていく仕組み。</h1>
+    <p>10年以上の経験が生む、確かな指導ノウハウ。アルバイト講師のように担当がコロコロ変わることはありません。一人の講師が責任を持ってプランニングします。</p>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="ed-list">
+      <div class="ed-item">
+        <div class="ed-num zen">01</div>
+        <div class="ed-body"><h3 class="zen">最短経路のプランニング — 「何を・どの順番でやるか」をプロが判断</h3><p>やみくもに勉強させることはしません。今の課題に対して最も伸びる順序を判断し、学習プランを最適化。その場の反応を見て、次に解くべきプリントをプロ講師がその場で選び出します。</p></div>
+      </div>
+      <div class="ed-item">
+        <div class="ed-num zen">02</div>
+        <div class="ed-body"><h3 class="zen">能動的巡回指導 — 「言わなくても伝わる」プロの目配り</h3><p>KATEぷらは、生徒からの質問を待ちません。講師が常に机を回り、ペンの止まり具合や表情から「今困っているな」と察知して声をかけます。内気な生徒でも置き去りにしません。</p></div>
+      </div>
+      <div class="ed-item">
+        <div class="ed-num zen">03</div>
+        <div class="ed-body"><h3 class="zen">目的を共有する指導 — 「やらされる勉強」から「目指す勉強」へ</h3><p>ただ課題を与えるだけではありません。「今の単元は何のためにあるか」「ゴールまでの最短経路はどこか」を共有し、生徒自身の「やりたい」気持ちを尊重します。</p></div>
+      </div>
+    </div>
+    <div class="cta-block">
+      <a href="results.html" class="btn zen">実績を見る →</a>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <img src="assets/logo-wide.png" alt="KATEぷら">
+  © 2026 KATEぷら — kate-pl.com
+</footer>
+
+</body>
+</html>

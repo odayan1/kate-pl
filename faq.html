@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>よくある質問 | KATEぷら</title>
+<meta name="description" content="KATEぷらへのよくあるご質問。家での自習との違い、少人数指導の仕組み、料金、対応教科などについてお答えします。">
+<link rel="icon" href="assets/logo-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--shallow:#7ecbe0;--mid:#2d93b8;--deep:#0d4a66;--abyss:#082d3f;--foam:#eff8fb;--sun:#f3cf1f;--sun-deep:#caa600;--kelp:#6fae3a;--kelp-deep:#548623;--ink:#122733;--ink-soft:#4f6b78;--paper:#ffffff;--line:rgba(13,74,102,.14);}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--ink);background:var(--paper);line-height:1.9;-webkit-font-smoothing:antialiased}
+.zen{font-family:'Zen Kaku Gothic New',sans-serif}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:900px;margin:0 auto;padding:0 clamp(20px,5vw,60px)}
+.nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:12px clamp(20px,5vw,60px);background:rgba(255,255,255,.94);backdrop-filter:blur(10px);box-shadow:0 2px 16px rgba(13,74,102,.08);gap:20px;flex-wrap:wrap}
+.nav__logo img{height:38px}
+.nav__links{display:flex;gap:24px;font-size:.84rem;font-weight:700}
+.nav__links a{color:var(--ink-soft);transition:color .2s}
+.nav__links a:hover,.nav__links a.on{color:var(--mid)}
+.nav__cta{background:var(--sun);color:var(--ink);font-weight:900;font-size:.8rem;padding:9px 18px;border-radius:999px;white-space:nowrap}
+@media(max-width:780px){.nav__links{display:none}}
+.pg-hero{background:linear-gradient(160deg,var(--deep),var(--abyss));color:#fff;padding:70px 0 60px;text-align:center}
+.pg-hero .sec-kicker{display:inline-flex;align-items:center;gap:10px;color:var(--sun);font-weight:900;font-size:.78rem;letter-spacing:.22em;margin-bottom:16px;justify-content:center}
+.pg-hero .sec-kicker::before{content:"";width:30px;height:1px;background:var(--sun)}
+.pg-hero h1{font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:clamp(1.6rem,4.2vw,2.4rem)}
+main{padding:70px 0}
+.faq-item{border-top:1px solid var(--line)}
+.faq-item:last-child{border-bottom:1px solid var(--line)}
+.faq-q{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:24px 4px;cursor:pointer;font-weight:700;font-size:.95rem}
+.faq-q .q-mark{color:var(--mid);font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;flex-shrink:0}
+.faq-q .chev{transition:transform .3s ease;color:var(--ink-soft);flex-shrink:0}
+.faq-item.open .chev{transform:rotate(180deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.faq-item.open .faq-a{max-height:320px}
+.faq-a p{padding:0 4px 24px 54px;font-size:.88rem;color:var(--ink-soft)}
+.cta-block{margin-top:60px;text-align:center}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 36px;border-radius:999px;font-weight:900;font-size:.92rem;background:var(--sun);color:var(--ink);transition:transform .25s,box-shadow .25s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(243,207,31,.4)}
+.footer{background:#06212f;color:rgba(255,255,255,.55);padding:36px 0;text-align:center;font-size:.8rem}
+.footer img{height:30px;margin:0 auto 12px;filter:brightness(0) invert(1);opacity:.8}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav__logo"><img src="assets/logo-wide.png" alt="KATEぷら"></a>
+  <div class="nav__links">
+    <a href="about.html">想い</a>
+    <a href="method.html">指導法</a>
+    <a href="results.html">実績</a>
+    <a href="pricing.html">料金</a>
+    <a href="faq.html" class="on">よくある質問</a>
+  </div>
+  <a href="contact.html" class="nav__cta">無料学習相談</a>
+</nav>
+
+<header class="pg-hero">
+  <div class="wrap">
+    <span class="sec-kicker">FAQ</span>
+    <h1 class="zen">よくある質問</h1>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="faq-item">
+      <div class="faq-q"><span><span class="q-mark zen">Q.</span> 家で自習する方が良いのでは？</span><span class="chev">▾</span></div>
+      <div class="faq-a"><p>ご家庭では誘惑も多く、モチベーション維持が難しいのが現実です。KATEぷらには生徒をやる気にさせ、成績を上げるためのノウハウがあります。「敷かれたレール」に乗って学習を進めることで、自学よりはるかに効率よく成績を上げられます。</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span><span class="q-mark zen">Q.</span> 先生が教える時間が少なすぎるのでは？（少人数指導なので）</span><span class="chev">▾</span></div>
+      <div class="faq-a"><p>つきっきりで教える時間は多くありませんが、「解説を豊富に含んだ独自のプリント」を使用しているため、生徒はプリントから教わるように学習を進められ、質の高い学習時間を確保できます。</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span><span class="q-mark zen">Q.</span> 先生は本当に全教科教えられるのですか？</span><span class="chev">▾</span></div>
+      <div class="faq-a"><p>はい、お任せください。プロの家庭教師は中学校レベルであれば分野を問わず質問される職業です。10年以上の指導経験の中で、あらゆる教科・分野に対応できる技術と方法を確立しています（国語はシステム的な指導が難しい場合がございます）。</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span><span class="q-mark zen">Q.</span> うちの子のレベルに合うか心配です。</span><span class="chev">▾</span></div>
+      <div class="faq-a"><p>どのような学力レベルの生徒さんに対しても、その子にレベルを合わせた指導を必ず提供いたします。安心してお越しください。</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span><span class="q-mark zen">Q.</span> 他の学習塾や個別指導と同じではありませんか？</span><span class="chev">▾</span></div>
+      <div class="faq-a"><p>一般的な塾（一方向の授業）とは異なり、講師と生徒の間で「双方向のやり取り」を行います。また他の個別指導塾のように日によって先生が変わることはなく、一人のベテラン講師が責任を持って担当するため学習プランが一貫しています。</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span><span class="q-mark zen">Q.</span> プリント中心なのに、料金が高いのでは？</span><span class="chev">▾</span></div>
+      <div class="faq-a"><p>決して高くはありません。プリント代だけでなく、長年のノウハウ、ベテラン講師の指導、確立された成功確率の高いやり方を提供しているため、費用対効果は非常に高いと自負しております。</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span><span class="q-mark zen">Q.</span> 週1回では少ないのでは？</span><span class="chev">▾</span></div>
+      <div class="faq-a"><p>質の高い学習を凝縮して行いますが、ご要望に応じて、将来的には回数を増やせるよう検討しております。</p></div>
+    </div>
+    <div class="cta-block">
+      <a href="contact.html" class="btn zen">無料学習相談に申し込む →</a>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <img src="assets/logo-wide.png" alt="KATEぷら">
+  © 2026 KATEぷら — kate-pl.com
+</footer>
+
+<script>
+document.querySelectorAll('.faq-item').forEach(item => {
+  item.querySelector('.faq-q').addEventListener('click', () => {
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  });
+});
+</script>
+</body>
+</html>
