@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KATEぷら | 山梨市の少人数個別学習塾</title>
-<meta name="description" content="KATEぷらは、家庭教師歴10年以上のプロ講師による「質」と、少人数演習による「量」を両立した学習サポート。山梨市駅前。">
+<meta name="description" content="答えを知っている人より、答えにたどり着く人へ。KATEぷらは、家庭教師歴10年以上のプロ講師による「質」と、少人数演習による「量」を両立した学習サポート。山梨市駅前。">
 <meta property="og:title" content="KATEぷら | 山梨市の少人数個別学習塾">
-<meta property="og:description" content="「わかったつもり」で、終わっていませんか？">
+<meta property="og:description" content="答えを知っている人より、答えにたどり着く人へ。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://kate-pl.com/">
 <link rel="icon" href="assets/logo-icon.png">
@@ -26,12 +26,17 @@ body{
   -webkit-font-smoothing:antialiased;overflow-x:hidden;
 }
 .zen{font-family:'Zen Kaku Gothic New',sans-serif}
+.nw{display:inline-block}
 a{color:inherit;text-decoration:none}
 
 /* ===== fixed depth background ===== */
 #depth-bg{position:fixed;inset:0;z-index:-3;background:var(--sky)}
-#bubbles{position:fixed;inset:0;z-index:-2;pointer-events:none;overflow:hidden;opacity:.5}
-.bubble{position:absolute;bottom:-10%;border-radius:50%;background:rgba(255,255,255,.35);animation:rise linear infinite}
+#bubbles{position:fixed;inset:0;z-index:-2;pointer-events:none;overflow:hidden;opacity:.9}
+.bubble{position:absolute;bottom:-10%;border-radius:50%;
+  background:radial-gradient(circle at 32% 28%,rgba(255,255,255,.95),rgba(255,255,255,.3) 45%,rgba(255,255,255,.1) 72%);
+  border:1.5px solid rgba(255,255,255,.55);
+  box-shadow:0 0 10px rgba(255,255,255,.25);
+  animation:rise linear infinite}
 @keyframes rise{from{transform:translateY(0) translateX(0)}to{transform:translateY(-120vh) translateX(var(--drift,20px))}}
 
 /* ===== custom cursor ===== */
@@ -43,6 +48,31 @@ a{color:inherit;text-decoration:none}
 .mini-logo{position:fixed;top:20px;left:clamp(20px,4vw,40px);z-index:50;opacity:0;animation:fadeIn 1s ease 1.2s forwards}
 .mini-logo img{height:34px;filter:drop-shadow(0 2px 8px rgba(0,0,0,.3))}
 @keyframes fadeIn{to{opacity:1}}
+
+/* ===== header CTA (contact only) ===== */
+.header-cta{
+  position:fixed;top:18px;right:clamp(16px,4vw,40px);z-index:60;
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--sun);color:var(--ink);
+  font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:.88rem;
+  padding:11px 24px;border-radius:999px;
+  box-shadow:0 6px 18px rgba(0,0,0,.18);
+  opacity:0;animation:fadeIn .8s ease 1s forwards;
+  transition:transform .2s,box-shadow .2s,background .2s;
+}
+.header-cta:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(0,0,0,.28);background:#ffdf4d}
+
+/* ===== big CTA button (pricing) ===== */
+.btn-big{
+  display:inline-flex;align-items:center;gap:10px;margin-top:34px;
+  background:linear-gradient(135deg,var(--sun),#ffdf4d);color:var(--ink);
+  font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;
+  font-size:clamp(1rem,2.2vw,1.2rem);
+  padding:18px 48px;border-radius:999px;
+  box-shadow:0 10px 30px rgba(243,207,31,.45);
+  transition:transform .2s,box-shadow .2s;
+}
+.btn-big:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 16px 42px rgba(243,207,31,.6)}
 
 /* ===== scenes ===== */
 .scene{min-height:100svh;display:flex;align-items:center;justify-content:center;position:relative;padding:60px clamp(20px,6vw,60px);text-align:center;overflow:hidden}
@@ -68,20 +98,38 @@ a{color:inherit;text-decoration:none}
 
 /* ===== hero (sky) ===== */
 #s-hero{color:var(--ink)}
-/* big animated logo — snappy "シュッ" entrance, then settles dead-center */
+/* big logo — revealed left-to-right as the school of fish swims past.
+   --shift nudges the wordmark right so the "E" sits at screen center */
 .brand-logo{
+  --shift:-15%; /* nudge the wordmark left so the T|E boundary sits at screen center */
   width:clamp(340px,82vw,960px);margin:0 auto 20px;
-  display:block;opacity:0;transform-origin:center center;will-change:transform,opacity;
-  animation:logoShu .55s cubic-bezier(.16,1,.3,1) .15s forwards;
+  display:block;transform:translateX(var(--shift));
+  clip-path:inset(-20% 100% -20% -5%);
+  animation:logoWipe 2.9s linear 2.9s forwards;
 }
 .brand-logo img{width:100%;display:block;filter:drop-shadow(0 16px 30px rgba(13,74,102,.24))}
-@keyframes logoShu{
-  0%{opacity:0;transform:translateX(-140px) scale(.92)}
-  70%{opacity:1;transform:translateX(10px) scale(1.01)}
-  100%{opacity:1;transform:translateX(0) scale(1)}
+@keyframes logoWipe{to{clip-path:inset(-20% -5% -20% -5%)}}
+
+/* ===== Swimmy's finale: a huge "fish" made of many small fish =====
+   The whole formation glides slowly left → right; the black Swimmy is the eye.
+   The logo is revealed in the formation's wake. */
+.school{position:absolute;inset:0;z-index:4;pointer-events:none;overflow:hidden}
+.big-school{
+  position:absolute;top:4%;height:56%;width:min(94vw,1150px);left:0;
+  will-change:transform;transform:translateX(-110%);
+  animation:schoolCross 6s linear .2s forwards;
 }
+@keyframes schoolCross{
+  from{transform:translateX(-110%)}
+  to{transform:translateX(calc(100vw + 10%))}
+}
+.bf{position:absolute;transform:translate(-50%,-50%)}
+.bf svg{display:block;overflow:visible;animation:bfSwim 1s ease-in-out infinite alternate}
+@keyframes bfSwim{from{transform:translateX(-3px) translateY(-1.5px)}to{transform:translateX(3px) translateY(1.5px)}}
+.bf.swimmy{z-index:2;filter:drop-shadow(0 0 6px rgba(255,255,255,.8))}
 @media(prefers-reduced-motion:reduce){
-  .brand-logo{animation:none;opacity:1}
+  .brand-logo{animation:none;clip-path:none}
+  .school{display:none}
 }
 .brand-sub{
   font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;
@@ -147,6 +195,7 @@ a{color:inherit;text-decoration:none}
 <div id="bubbles"></div>
 
 <a href="#s-hero" class="mini-logo"><img src="assets/logo-wide.png" alt="KATEぷら"></a>
+<a href="contact.html" class="header-cta">✉ お問い合わせ</a>
 
 <!-- symbol defs for fish -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -176,12 +225,13 @@ a{color:inherit;text-decoration:none}
 
 <!-- SCENE 0: HERO / SKY -->
 <section class="scene armed" id="s-hero" data-depth="0">
+  <div class="school" id="school" aria-hidden="true"></div>
   <div class="scene__inner">
     <h1 class="brand-logo" aria-label="KATEぷら"><img src="assets/logo-wide.png" alt="KATEぷら"></h1>
     <p class="brand-sub rv">山梨市の少人数個別学習塾</p>
-    <h2 class="zen rv hero-copy">「わかったつもり」で、<br>終わっていませんか？</h2>
-    <span class="eng rv">Are you only skimming the surface?</span>
-    <p class="lead rv">一歩ずつ、下へ。KATEぷらの景色を見てください。</p>
+    <h2 class="zen rv hero-copy"><span class="nw">答えを知っている人より、</span><br><span class="nw">答えにたどり着く人へ。</span></h2>
+    <span class="eng rv">Reach the answer by yourself.</span>
+    <p class="lead rv"><span class="nw">自分の力で、答えまで潜る。</span><span class="nw">KATEぷらの海へ、ようこそ。</span></p>
   </div>
   <div class="scroll-hint">SCROLL</div>
 </section>
@@ -201,9 +251,9 @@ a{color:inherit;text-decoration:none}
   </div>
   <div class="scene__inner">
     <div class="kicker rv">01 <span class="jp">— 想い</span> Philosophy</div>
-    <h2 class="zen rv">自学学習に、<em>プラチナ</em>をプラス。</h2>
+    <h2 class="zen rv"><span class="nw">自学学習に、</span><span class="nw"><em>プラチナ</em>をプラス。</span></h2>
     <span class="eng rv">Quality × Quantity</span>
-    <p class="lead rv">「質」の高い指導と、「量」をこなす演習。どちらもあきらめません。</p>
+    <p class="lead rv"><span class="nw">答えを渡すだけの勉強では、力はつきません。</span><span class="nw">「質」の高い指導と「量」をこなす演習で、</span><span class="nw">自分でたどり着く力を育てます。</span></p>
     <a href="about.html" class="deep-link rv">想いを読む →</a>
   </div>
 </section>
@@ -216,9 +266,9 @@ a{color:inherit;text-decoration:none}
   </div>
   <div class="scene__inner">
     <div class="kicker rv">02 <span class="jp">— 指導法</span> Method</div>
-    <h2 class="zen rv">敷かれたレールに乗るだけで、<em>伸びていく</em>仕組み。</h2>
+    <h2 class="zen rv"><span class="nw">敷かれたレールに乗るだけで、</span><span class="nw"><em>伸びていく</em>仕組み。</span></h2>
     <span class="eng rv">Designed by professionals</span>
-    <p class="lead rv">やみくもな勉強はもう終わり。プロが最短経路を設計します。</p>
+    <p class="lead rv"><span class="nw">やみくもな勉強はもう終わり。</span><span class="nw">プロが「答えまでの最短経路」を設計します。</span></p>
     <a href="method.html" class="deep-link rv">指導法を見る →</a>
   </div>
 </section>
@@ -233,7 +283,7 @@ a{color:inherit;text-decoration:none}
     <div class="kicker rv">03 <span class="jp">— 実績</span> Results</div>
     <h2 class="zen rv">点数は、<em>ちゃんと</em>変わる。</h2>
     <span class="eng rv">Results that actually show</span>
-    <p class="lead rv">定期テスト30点台から、6ヶ月後に英検準2級へ。</p>
+    <p class="lead rv"><span class="nw">自分でたどり着けた答えは、忘れません。</span><span class="nw">定期テスト30点台から、6ヶ月後に英検準2級へ。</span></p>
     <a href="results.html" class="deep-link rv">実績を見る →</a>
   </div>
 </section>
@@ -248,8 +298,8 @@ a{color:inherit;text-decoration:none}
     <div class="kicker rv">04 <span class="jp">— 料金</span> Pricing</div>
     <h2 class="zen rv">料金は、<em>シンプル</em>に。</h2>
     <span class="eng rv">Simple, flat-rate pricing</span>
-    <p class="lead rv">5教科まとめて定額。教科が増えても、追加料金はありません。</p>
-    <a href="pricing.html" class="deep-link rv">料金プランを見る →</a>
+    <p class="lead rv"><span class="nw">5教科まとめて定額。</span><span class="nw">教科が増えても、追加料金はありません。</span></p>
+    <a href="pricing.html" class="btn-big rv">料金プランを見る →</a>
   </div>
 </section>
 
@@ -314,16 +364,52 @@ scenes.forEach(s => resetIo.observe(s));
 
 /* ===== bubbles ===== */
 const bubbleLayer = document.getElementById('bubbles');
-for (let i=0;i<22;i++){
+for (let i=0;i<32;i++){
   const b = document.createElement('div');
   b.className = 'bubble';
-  const size = 4 + Math.random()*10;
+  // mixed sizes: lots of small, some medium, a few big ones
+  const r = Math.random();
+  const size = r < .5 ? 5 + Math.random()*8
+             : r < .85 ? 14 + Math.random()*14
+             : 30 + Math.random()*22;
   b.style.width = size+'px'; b.style.height = size+'px';
   b.style.left = (Math.random()*100)+'%';
-  b.style.setProperty('--drift', (Math.random()*60-30)+'px');
-  b.style.animationDuration = (10+Math.random()*14)+'s';
-  b.style.animationDelay = (Math.random()*14)+'s';
+  b.style.setProperty('--drift', (Math.random()*80-40)+'px');
+  b.style.animationDuration = (9+Math.random()*13)+'s';
+  b.style.animationDelay = (Math.random()*12)+'s';
   bubbleLayer.appendChild(b);
+}
+
+/* ===== Swimmy's finale: many small fish form ONE giant fish, Swimmy is the eye ===== */
+const school = document.getElementById('school');
+if (school){
+  const form = document.createElement('div');
+  form.className = 'big-school';
+  // giant fish silhouette (faces right): body ellipse + tail triangle at the left
+  const inside = (x,y) => {
+    const body = ((x-0.56)/0.36)**2 + ((y-0.5)/0.27)**2 <= 1;
+    const tail = x <= 0.24 && Math.abs(y-0.5) <= (0.24-x)/0.24*0.32;
+    return body || tail;
+  };
+  const blues = ['#2d93b8','#257ca3','#3ea0c6','#1d6a8f','#4fb0d4'];
+  let html = '';
+  for (let gx=0.02; gx<=1; gx+=0.035){
+    for (let gy=0.04; gy<=0.96; gy+=0.05){
+      const x = gx + (Math.random()-0.5)*0.022;
+      const y = gy + (Math.random()-0.5)*0.03;
+      if (!inside(x,y)) continue;
+      // keep the eye spot clear for Swimmy
+      if (((x-0.80)/0.07)**2 + ((y-0.40)/0.11)**2 <= 1) continue;
+      const w = Math.round(45 + Math.random()*27);
+      const c = blues[Math.floor(Math.random()*blues.length)];
+      const d = (Math.random()*1).toFixed(2);
+      html += `<div class="bf" style="left:${(x*100).toFixed(1)}%;top:${(y*100).toFixed(1)}%"><svg width="${w}" height="${Math.round(w/2)}" viewBox="-10 -16 70 32" style="fill:${c};animation-delay:-${d}s"><use href="#fishA"/></svg></div>`;
+    }
+  }
+  // Swimmy — the black fish as the eye
+  html += `<div class="bf swimmy" style="left:80%;top:40%"><svg width="100" height="50" viewBox="-10 -16 70 32" style="fill:#04141d"><use href="#fishA"/></svg></div>`;
+  form.innerHTML = html;
+  school.appendChild(form);
 }
 
 /* ===== fish dart away when cursor nears ===== */
