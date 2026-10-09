@@ -60,19 +60,40 @@ a{color:inherit;text-decoration:none}
 .deep-link{display:inline-flex;align-items:center;gap:8px;margin-top:30px;font-size:.84rem;font-weight:700;color:rgba(255,255,255,.85);border-bottom:1px solid rgba(255,255,255,.4);padding-bottom:3px;transition:color .25s,border-color .25s}
 .deep-link:hover{color:var(--sun);border-color:var(--sun)}
 
-.rv{opacity:0;transform:translateY(22px);filter:blur(4px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.65,.2,1),filter .9s ease}
+.rv{opacity:0;transform:translateY(18px);filter:blur(3px);transition:opacity .5s ease,transform .5s cubic-bezier(.16,1,.3,1),filter .5s ease}
 .scene.armed .rv{opacity:1;transform:none;filter:blur(0)}
-.scene.armed .rv:nth-child(2){transition-delay:.12s}
-.scene.armed .rv:nth-child(3){transition-delay:.24s}
-.scene.armed .rv:nth-child(4){transition-delay:.36s}
+.scene.armed .rv:nth-child(2){transition-delay:.07s}
+.scene.armed .rv:nth-child(3){transition-delay:.14s}
+.scene.armed .rv:nth-child(4){transition-delay:.21s}
 
 /* ===== hero (sky) ===== */
 #s-hero{color:var(--ink)}
-.hero__logo{width:min(320px,70vw);margin:0 auto 10px;opacity:0;animation:logoIn 1s ease .1s forwards}
-@keyframes logoIn{from{opacity:0;transform:translateY(-14px) scale(.92)}to{opacity:1;transform:none}}
-.hero__logo video{width:100%;display:block;mix-blend-mode:multiply}
-#s-hero h1{color:var(--ink);text-shadow:none}
+/* big animated logo — snappy "シュッ" entrance, then settles dead-center */
+.brand-logo{
+  width:clamp(340px,82vw,960px);margin:0 auto 20px;
+  display:block;opacity:0;transform-origin:center center;will-change:transform,opacity;
+  animation:logoShu .55s cubic-bezier(.16,1,.3,1) .15s forwards;
+}
+.brand-logo img{width:100%;display:block;filter:drop-shadow(0 16px 30px rgba(13,74,102,.24))}
+@keyframes logoShu{
+  0%{opacity:0;transform:translateX(-140px) scale(.92)}
+  70%{opacity:1;transform:translateX(10px) scale(1.01)}
+  100%{opacity:1;transform:translateX(0) scale(1)}
+}
+@media(prefers-reduced-motion:reduce){
+  .brand-logo{animation:none;opacity:1}
+}
+.brand-sub{
+  font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;
+  font-size:clamp(.82rem,2vw,1.05rem);letter-spacing:.3em;
+  color:var(--mid);margin:0 0 30px;padding-left:.3em;
+}
+#s-hero h1,#s-hero .hero-copy{color:var(--ink);text-shadow:none}
+.hero-copy{font-size:clamp(1.3rem,3.6vw,2rem)}
 #s-hero p.lead{color:#2a4654}
+@media(prefers-reduced-motion:reduce){
+  .brand span{animation:brandIn .5s ease forwards}
+}
 .scroll-hint{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);font-size:.68rem;letter-spacing:.3em;color:rgba(18,39,51,.55);display:flex;flex-direction:column;align-items:center;gap:10px;z-index:3}
 .scroll-hint::after{content:"";width:1px;height:38px;background:linear-gradient(rgba(18,39,51,.5),transparent);animation:drop 1.8s infinite}
 @keyframes drop{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
@@ -156,8 +177,9 @@ a{color:inherit;text-decoration:none}
 <!-- SCENE 0: HERO / SKY -->
 <section class="scene armed" id="s-hero" data-depth="0">
   <div class="scene__inner">
-    <div class="hero__logo"><video autoplay muted playsinline><source src="assets/hero.mp4" type="video/mp4"></video></div>
-    <h1 class="zen rv">「わかったつもり」で、<br>終わっていませんか？</h1>
+    <h1 class="brand-logo" aria-label="KATEぷら"><img src="assets/logo-wide.png" alt="KATEぷら"></h1>
+    <p class="brand-sub rv">山梨市の少人数個別学習塾</p>
+    <h2 class="zen rv hero-copy">「わかったつもり」で、<br>終わっていませんか？</h2>
     <span class="eng rv">Are you only skimming the surface?</span>
     <p class="lead rv">一歩ずつ、下へ。KATEぷらの景色を見てください。</p>
   </div>
