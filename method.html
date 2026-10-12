@@ -24,7 +24,7 @@ img{max-width:100%;display:block}
 .nav__links a{color:var(--ink-soft);transition:color .2s}
 .nav__links a:hover,.nav__links a.on{color:var(--mid)}
 .nav__cta{background:var(--sun);color:var(--ink);font-weight:900;font-size:.8rem;padding:9px 18px;border-radius:999px;white-space:nowrap}
-@media(max-width:780px){.nav__links{display:none}}
+@media(max-width:780px){.nav{gap:8px 16px}.nav__links{order:3;width:100%;overflow-x:auto;gap:20px;font-size:.8rem;white-space:nowrap;padding:2px 0 4px;-webkit-overflow-scrolling:touch;scrollbar-width:none}.nav__links::-webkit-scrollbar{display:none}}
 .pg-hero{background:linear-gradient(160deg,var(--deep),var(--abyss));color:#fff;padding:70px 0 60px;text-align:center}
 .pg-hero .sec-kicker{display:inline-flex;align-items:center;gap:10px;color:var(--sun);font-weight:900;font-size:.78rem;letter-spacing:.22em;margin-bottom:16px;justify-content:center}
 .pg-hero .sec-kicker::before{content:"";width:30px;height:1px;background:var(--sun)}
@@ -44,6 +44,9 @@ main{padding:70px 0}
 .btn:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(243,207,31,.4)}
 .footer{background:#06212f;color:rgba(255,255,255,.55);padding:36px 0;text-align:center;font-size:.8rem}
 .footer img{height:30px;margin:0 auto 12px;filter:brightness(0) invert(1);opacity:.8}
+.footer__links{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 20px;margin-bottom:14px;font-weight:700}
+.footer__links a:hover{color:var(--sun)}
+.footer__addr{font-size:.74rem;line-height:1.8;margin-bottom:12px}
 </style>
 </head>
 <body>
@@ -52,6 +55,7 @@ main{padding:70px 0}
   <a href="index.html" class="nav__logo"><img src="assets/logo-wide.png" alt="KATEぷら"></a>
   <div class="nav__links">
     <a href="about.html">想い</a>
+    <a href="learning.html">学び方</a>
     <a href="method.html" class="on">指導法</a>
     <a href="results.html">実績</a>
     <a href="pricing.html">料金</a>
@@ -92,6 +96,8 @@ main{padding:70px 0}
 
 <footer class="footer">
   <img src="assets/logo-wide.png" alt="KATEぷら">
+  <div class="footer__links"><a href="about.html">想い</a><a href="learning.html">学び方</a><a href="method.html">指導法</a><a href="results.html">実績</a><a href="pricing.html">料金</a><a href="faq.html">よくある質問</a><a href="contact.html">お問い合わせ</a></div>
+  <div class="footer__addr">KATEKYO学院 山梨市駅前校　山梨県山梨市上神内川1706 廣瀬ビル1F<br>TEL 0553-20-8008（山梨市駅から徒歩2分）</div>
   © 2026 KATEぷら — kate-pl.com
 </footer>
 

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>よくある質問 | KATEぷら</title>
-<meta name="description" content="KATEぷらへのよくあるご質問。家での自習との違い、少人数指導の仕組み、料金、対応教科などについてお答えします。">
+<meta name="description" content="KATEぷらへのよくあるご質問。AI・タブレット学習との違い、自宅学習アプリ、少人数指導の仕組み、料金、対応教科などについてお答えします。">
 <link rel="icon" href="assets/logo-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,7 +24,7 @@ img{max-width:100%;display:block}
 .nav__links a{color:var(--ink-soft);transition:color .2s}
 .nav__links a:hover,.nav__links a.on{color:var(--mid)}
 .nav__cta{background:var(--sun);color:var(--ink);font-weight:900;font-size:.8rem;padding:9px 18px;border-radius:999px;white-space:nowrap}
-@media(max-width:780px){.nav__links{display:none}}
+@media(max-width:780px){.nav{gap:8px 16px}.nav__links{order:3;width:100%;overflow-x:auto;gap:20px;font-size:.8rem;white-space:nowrap;padding:2px 0 4px;-webkit-overflow-scrolling:touch;scrollbar-width:none}.nav__links::-webkit-scrollbar{display:none}}
 .pg-hero{background:linear-gradient(160deg,var(--deep),var(--abyss));color:#fff;padding:70px 0 60px;text-align:center}
 .pg-hero .sec-kicker{display:inline-flex;align-items:center;gap:10px;color:var(--sun);font-weight:900;font-size:.78rem;letter-spacing:.22em;margin-bottom:16px;justify-content:center}
 .pg-hero .sec-kicker::before{content:"";width:30px;height:1px;background:var(--sun)}
@@ -37,13 +37,17 @@ main{padding:70px 0}
 .faq-q .chev{transition:transform .3s ease;color:var(--ink-soft);flex-shrink:0}
 .faq-item.open .chev{transform:rotate(180deg)}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
-.faq-item.open .faq-a{max-height:320px}
+.faq-item.open .faq-a{max-height:640px}
+.faq-q:focus-visible{outline:2px solid var(--mid);outline-offset:2px;border-radius:6px}
 .faq-a p{padding:0 4px 24px 54px;font-size:.88rem;color:var(--ink-soft)}
 .cta-block{margin-top:60px;text-align:center}
 .btn{display:inline-flex;align-items:center;gap:10px;padding:16px 36px;border-radius:999px;font-weight:900;font-size:.92rem;background:var(--sun);color:var(--ink);transition:transform .25s,box-shadow .25s}
 .btn:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(243,207,31,.4)}
 .footer{background:#06212f;color:rgba(255,255,255,.55);padding:36px 0;text-align:center;font-size:.8rem}
 .footer img{height:30px;margin:0 auto 12px;filter:brightness(0) invert(1);opacity:.8}
+.footer__links{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 20px;margin-bottom:14px;font-weight:700}
+.footer__links a:hover{color:var(--sun)}
+.footer__addr{font-size:.74rem;line-height:1.8;margin-bottom:12px}
 </style>
 </head>
 <body>
@@ -52,6 +56,7 @@ main{padding:70px 0}
   <a href="index.html" class="nav__logo"><img src="assets/logo-wide.png" alt="KATEぷら"></a>
   <div class="nav__links">
     <a href="about.html">想い</a>
+    <a href="learning.html">学び方</a>
     <a href="method.html">指導法</a>
     <a href="results.html">実績</a>
     <a href="pricing.html">料金</a>
@@ -69,6 +74,14 @@ main{padding:70px 0}
 
 <main>
   <div class="wrap">
+    <div class="faq-item">
+      <div class="faq-q"><span><span class="q-mark zen">Q.</span> AIやタブレット学習があれば、塾はいらないのでは？</span><span class="chev">▾</span></div>
+      <div class="faq-a"><p>AIはとても便利な道具で、KATEぷらでも積極的に活用しています。ただ、AIで勉強するときに使うのはスマホやタブレット。気づけば動画やSNSを開いていた、ということが起こりがちです。KATEぷらの教室では紙のプリントで勉強するため、スマホから離れて目の前の問題に集中できます。また「来週も来てね」という講師との約束が、勉強を続ける大きな力になります。<a href="learning.html" style="color:var(--mid);font-weight:700">学び方を詳しく見る →</a></p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span><span class="q-mark zen">Q.</span> 家ではどんな勉強をすればいいですか？</span><span class="chev">▾</span></div>
+      <div class="faq-a"><p>講師がAIを使って作った学習アプリを、自宅学習用にお配りすることがあります。教室で取り組んだ単元をアプリで復習できるので、教室と家の学習がつながります。苦手な単元や目標に合わせて、その子のためだけに作るオーダーメイドのアプリもあります。追加料金はかかりません。</p></div>
+    </div>
     <div class="faq-item">
       <div class="faq-q"><span><span class="q-mark zen">Q.</span> 家で自習する方が良いのでは？</span><span class="chev">▾</span></div>
       <div class="faq-a"><p>ご家庭では誘惑も多く、モチベーション維持が難しいのが現実です。KATEぷらには生徒をやる気にさせ、成績を上げるためのノウハウがあります。「敷かれたレール」に乗って学習を進めることで、自学よりはるかに効率よく成績を上げられます。</p></div>
@@ -91,11 +104,11 @@ main{padding:70px 0}
     </div>
     <div class="faq-item">
       <div class="faq-q"><span><span class="q-mark zen">Q.</span> プリント中心なのに、料金が高いのでは？</span><span class="chev">▾</span></div>
-      <div class="faq-a"><p>決して高くはありません。プリント代だけでなく、長年のノウハウ、ベテラン講師の指導、確立された成功確率の高いやり方を提供しているため、費用対効果は非常に高いと自負しております。</p></div>
+      <div class="faq-a"><p>KATEぷらは、教室で講師が見守る学習を、できるだけ通いやすい料金でご提供しています。1教科ごとに月謝がかかる教室も多い中、5教科まとめて定額で、教材費も0円。さらに長年のノウハウとベテラン講師の指導、自宅学習用アプリまで含まれているため、費用対効果は高いと自負しております。<a href="pricing.html" style="color:var(--mid);font-weight:700">料金プランを見る →</a></p></div>
     </div>
     <div class="faq-item">
       <div class="faq-q"><span><span class="q-mark zen">Q.</span> 週1回では少ないのでは？</span><span class="chev">▾</span></div>
-      <div class="faq-a"><p>質の高い学習を凝縮して行いますが、ご要望に応じて、将来的には回数を増やせるよう検討しております。</p></div>
+      <div class="faq-a"><p>教室では質の高い学習を凝縮して行い、教室のない日は自宅学習用アプリで復習できるようにしています。週1回の教室と家での復習を組み合わせることで、学習が途切れない仕組みです。回数を増やしたいご要望については、無料学習相談でご相談ください。</p></div>
     </div>
     <div class="cta-block">
       <a href="contact.html" class="btn zen">無料学習相談に申し込む →</a>
@@ -105,15 +118,20 @@ main{padding:70px 0}
 
 <footer class="footer">
   <img src="assets/logo-wide.png" alt="KATEぷら">
+  <div class="footer__links"><a href="about.html">想い</a><a href="learning.html">学び方</a><a href="method.html">指導法</a><a href="results.html">実績</a><a href="pricing.html">料金</a><a href="faq.html">よくある質問</a><a href="contact.html">お問い合わせ</a></div>
+  <div class="footer__addr">KATEKYO学院 山梨市駅前校　山梨県山梨市上神内川1706 廣瀬ビル1F<br>TEL 0553-20-8008（山梨市駅から徒歩2分）</div>
   © 2026 KATEぷら — kate-pl.com
 </footer>
 
 <script>
 document.querySelectorAll('.faq-item').forEach(item => {
-  item.querySelector('.faq-q').addEventListener('click', () => {
+  const q = item.querySelector('.faq-q');
+  q.setAttribute('role','button'); q.setAttribute('tabindex','0'); q.setAttribute('aria-expanded','false');
+  q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); q.click(); } });
+  q.addEventListener('click', () => {
     const wasOpen = item.classList.contains('open');
-    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
-    if (!wasOpen) item.classList.add('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => { i.classList.remove('open'); i.querySelector('.faq-q').setAttribute('aria-expanded','false'); });
+    if (!wasOpen) { item.classList.add('open'); q.setAttribute('aria-expanded','true'); }
   });
 });
 </script>

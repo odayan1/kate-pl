@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>学び方 | KATEぷら</title>
+<meta name="description" content="スマホから離れて、紙で集中する教室。家ではAIで作ったその子のための学習アプリで復習。KATEぷらは「紙×デジタル」を組み合わせた、山梨市駅前の少人数学習塾です。">
+<meta property="og:title" content="学び方 | KATEぷら">
+<meta property="og:description" content="教室は「紙」で集中、家では「アプリ」で復習。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://kate-pl.com/learning.html">
+<link rel="icon" href="assets/logo-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--shallow:#7ecbe0;--mid:#2d93b8;--deep:#0d4a66;--abyss:#082d3f;--foam:#eff8fb;--sun:#f3cf1f;--sun-deep:#caa600;--kelp:#6fae3a;--kelp-deep:#548623;--ink:#122733;--ink-soft:#4f6b78;--paper:#ffffff;--line:rgba(13,74,102,.14);}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--ink);background:var(--paper);line-height:1.9;-webkit-font-smoothing:antialiased}
+.zen{font-family:'Zen Kaku Gothic New',sans-serif}
+.nw{display:inline-block}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:900px;margin:0 auto;padding:0 clamp(20px,5vw,60px)}
+.nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:12px clamp(20px,5vw,60px);background:rgba(255,255,255,.94);backdrop-filter:blur(10px);box-shadow:0 2px 16px rgba(13,74,102,.08);gap:20px;flex-wrap:wrap}
+.nav__logo img{height:38px}
+.nav__links{display:flex;gap:24px;font-size:.84rem;font-weight:700}
+.nav__links a{color:var(--ink-soft);transition:color .2s}
+.nav__links a:hover,.nav__links a.on{color:var(--mid)}
+.nav__cta{background:var(--sun);color:var(--ink);font-weight:900;font-size:.8rem;padding:9px 18px;border-radius:999px;white-space:nowrap}
+@media(max-width:780px){.nav{gap:8px 16px}.nav__links{order:3;width:100%;overflow-x:auto;gap:20px;font-size:.8rem;white-space:nowrap;padding:2px 0 4px;-webkit-overflow-scrolling:touch;scrollbar-width:none}.nav__links::-webkit-scrollbar{display:none}}
+.pg-hero{background:linear-gradient(160deg,var(--deep),var(--abyss));color:#fff;padding:70px 0 60px;text-align:center}
+.pg-hero .sec-kicker{display:inline-flex;align-items:center;gap:10px;color:var(--sun);font-weight:900;font-size:.78rem;letter-spacing:.22em;margin-bottom:16px;justify-content:center}
+.pg-hero .sec-kicker::before{content:"";width:30px;height:1px;background:var(--sun)}
+.pg-hero h1{font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:clamp(1.6rem,4.2vw,2.4rem);line-height:1.5}
+.pg-hero p{color:rgba(255,255,255,.82);margin-top:16px;max-width:600px;margin-left:auto;margin-right:auto}
+main{padding:70px 0 80px}
+
+/* chapter */
+.chapter{padding:56px 0;border-top:1px solid var(--line)}
+.chapter:first-child{border-top:none;padding-top:0}
+.ch-num{font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:.8rem;letter-spacing:.22em;color:var(--mid)}
+.chapter h2{font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:clamp(1.35rem,3.4vw,1.9rem);line-height:1.55;margin:8px 0 22px}
+.chapter h2 em{font-style:normal;background:linear-gradient(transparent 62%,rgba(243,207,31,.55) 62%)}
+.chapter p{font-size:.95rem;color:var(--ink-soft);max-width:680px}
+.chapter p + p{margin-top:14px}
+.chapter p b{color:var(--ink)}
+
+/* AI vs classroom compare */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px}
+.cmp{border-radius:16px;padding:22px 24px}
+.cmp h3{font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:1rem;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.cmp ul{list-style:none;font-size:.86rem;display:flex;flex-direction:column;gap:8px}
+.cmp li{display:flex;gap:8px;align-items:flex-start}
+.cmp li::before{flex-shrink:0;font-weight:900}
+.cmp.home{background:#f4f6f7;color:var(--ink-soft)}
+.cmp.home li::before{content:"△";color:#9aa9b0}
+.cmp.room{background:var(--foam);border:2px solid var(--mid)}
+.cmp.room li::before{content:"◎";color:var(--mid)}
+@media(max-width:620px){.compare{grid-template-columns:1fr}}
+
+/* promise card */
+.promise{margin-top:28px;display:flex;gap:18px;align-items:center;background:linear-gradient(135deg,#fffbe6,#fff4c2);border-radius:16px;padding:22px 26px}
+.promise .bubble{flex-shrink:0;width:64px;height:64px;border-radius:50%;background:var(--sun);display:flex;align-items:center;justify-content:center;font-size:1.7rem}
+.promise b{font-family:'Zen Kaku Gothic New',sans-serif;font-size:1.15rem;display:block;color:var(--ink)}
+.promise span{font-size:.84rem;color:var(--ink-soft)}
+
+/* paper x app */
+.duo{display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:stretch;margin-top:30px}
+.duo-card{border-radius:18px;padding:24px;text-align:center;display:flex;flex-direction:column;align-items:center}
+.duo-card.paper{background:#fbf8f1;border:1px solid #ece3cf}
+.duo-card.app{background:linear-gradient(160deg,var(--deep),var(--abyss));color:#fff}
+.duo-card .tag{font-size:.72rem;font-weight:900;letter-spacing:.18em;padding:4px 12px;border-radius:999px;margin-bottom:14px}
+.duo-card.paper .tag{background:#efe5cc;color:#8a6d1f}
+.duo-card.app .tag{background:var(--sun);color:var(--ink)}
+.duo-card h3{font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:1.1rem;margin:14px 0 6px}
+.duo-card p{font-size:.82rem;line-height:1.8}
+.duo-card.paper p{color:var(--ink-soft)}
+.duo-card.app p{color:rgba(255,255,255,.8)}
+.duo-x{align-self:center;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:1.8rem;color:var(--sun-deep)}
+@media(max-width:680px){.duo{grid-template-columns:1fr}.duo-x{justify-self:center}}
+
+/* paper sheet illustration */
+.sheet{width:120px;height:150px;background:#fff;border-radius:6px;box-shadow:0 8px 20px rgba(0,0,0,.08);padding:14px 12px;display:flex;flex-direction:column;gap:9px;transform:rotate(-3deg)}
+.sheet i{display:block;height:6px;border-radius:3px;background:#e4ddd0}
+.sheet i:nth-child(1){width:60%;background:var(--mid);opacity:.5}
+.sheet i:nth-child(3){width:80%}
+.sheet i:nth-child(5){width:70%}
+.sheet .mark{align-self:flex-end;margin-top:auto;font-size:1.3rem;color:#d94b3d;font-weight:900;line-height:1}
+
+/* phone mock */
+.phone{width:120px;height:200px;border-radius:22px;background:#04141d;padding:8px;box-shadow:0 10px 26px rgba(0,0,0,.35)}
+.phone .scr{width:100%;height:100%;border-radius:16px;background:#fff;color:var(--ink);padding:14px 10px 10px;display:flex;flex-direction:column;gap:7px;text-align:left}
+.phone .q{font-size:.58rem;font-weight:700;color:var(--ink-soft);line-height:1.4}
+.phone .w{font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:.95rem;color:var(--deep)}
+.phone .opt{font-size:.6rem;padding:5px 8px;border-radius:8px;background:#eef4f6;font-weight:700}
+.phone .opt.ok{background:var(--kelp);color:#fff}
+.phone .bar{margin-top:auto;height:5px;border-radius:3px;background:#e7eef1;overflow:hidden}
+.phone .bar span{display:block;width:70%;height:100%;background:var(--sun)}
+
+/* app features */
+.feat{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
+.feat div{background:var(--foam);border-radius:14px;padding:18px}
+.feat b{display:block;font-family:'Zen Kaku Gothic New',sans-serif;font-size:.95rem;margin-bottom:6px;color:var(--deep)}
+.feat span{font-size:.8rem;color:var(--ink-soft);line-height:1.75;display:block}
+@media(max-width:680px){.feat{grid-template-columns:1fr}}
+
+/* price points */
+.points{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}
+.pt{border:1px solid var(--line);border-radius:16px;padding:22px 18px;text-align:center}
+.pt .big{font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:1.5rem;color:var(--deep);line-height:1.3}
+.pt .big small{font-size:.8rem}
+.pt span{display:block;font-size:.8rem;color:var(--ink-soft);margin-top:8px;line-height:1.7}
+@media(max-width:620px){.points{grid-template-columns:1fr}}
+
+.cta-block{margin-top:60px;text-align:center;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 36px;border-radius:999px;font-weight:900;font-size:.92rem;background:var(--sun);color:var(--ink);transition:transform .25s,box-shadow .25s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(243,207,31,.4)}
+.btn.ghost{background:transparent;border:2px solid var(--deep);color:var(--deep)}
+.btn.ghost:hover{box-shadow:0 12px 26px rgba(13,74,102,.18)}
+.footer{background:#06212f;color:rgba(255,255,255,.55);padding:40px 0 34px;text-align:center;font-size:.8rem}
+.footer img{height:30px;margin:0 auto 14px;filter:brightness(0) invert(1);opacity:.8}
+.footer__links{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 20px;margin-bottom:14px;font-weight:700}
+.footer__links a:hover{color:var(--sun)}
+.footer__addr{font-size:.74rem;line-height:1.8;margin-bottom:12px}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav__logo"><img src="assets/logo-wide.png" alt="KATEぷら"></a>
+  <div class="nav__links">
+    <a href="about.html">想い</a>
+    <a href="learning.html" class="on">学び方</a>
+    <a href="method.html">指導法</a>
+    <a href="results.html">実績</a>
+    <a href="pricing.html">料金</a>
+    <a href="faq.html">よくある質問</a>
+  </div>
+  <a href="contact.html" class="nav__cta">無料学習相談</a>
+</nav>
+
+<header class="pg-hero">
+  <div class="wrap">
+    <span class="sec-kicker">How We Learn</span>
+    <h1 class="zen"><span class="nw">教室は「紙」で集中、</span><span class="nw">家では「アプリ」で復習。</span></h1>
+    <p>スマホやゲームとの付き合い方に悩むご家庭が増えています。KATEぷらは、スマホから離れて集中できる「教室」と、AIで作ったその子のための「アプリ」を組み合わせて、無理なく続く学習をつくります。</p>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <!-- 01 -->
+    <section class="chapter">
+      <div class="ch-num">01 — スマホから離れる時間</div>
+      <h2 class="zen"><span class="nw">スマホから離れる時間を、</span><span class="nw"><em>教室で</em>。</span></h2>
+      <p>最近のゲームやSNSは、大人でも手放しにくいほど夢中になるように作られています。勉強の時間が減ったり、生活のリズムが崩れたりするのは、決してお子さまの意志が弱いからではありません。</p>
+      <p>「AIで勉強すれば、塾はいらない」という声もあります。けれど、AIで勉強するときに使うのもスマホやタブレットです。気づけば動画やSNSを開いていた――ということが、どうしても起こりやすくなります。</p>
+      <p>KATEぷらでは、<b>教室での学習は紙のプリントが中心</b>です。教室にいるあいだは、自然とスマホから離れ、目の前の問題だけに集中できます。</p>
+      <div class="compare">
+        <div class="cmp home">
+          <h3 class="zen">📱 スマホで一人で勉強</h3>
+          <ul>
+            <li>通知や動画・SNSがすぐ目に入る</li>
+            <li>やめるのも休むのも自分しだい</li>
+            <li>わからないところで止まりやすい</li>
+          </ul>
+        </div>
+        <div class="cmp room">
+          <h3 class="zen">✏️ KATEぷらの教室</h3>
+          <ul>
+            <li>紙のプリントで、目の前の問題に集中</li>
+            <li>決まった時間・決まった場所で勉強する習慣</li>
+            <li>講師が机を回り、つまずきにすぐ気づく</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 -->
+    <section class="chapter">
+      <div class="ch-num">02 — 人との約束</div>
+      <h2 class="zen"><span class="nw">「来週も来てね」が、</span><span class="nw"><em>続ける力</em>になる。</span></h2>
+      <p>勉強でいちばん難しいのは「続けること」です。アプリの通知は、閉じてしまえばそれきり。でも、顔の見える先生との約束は、そう簡単には破れません。</p>
+      <p>KATEぷらでは、毎回同じ講師が生徒さんを迎え、その日の頑張りを見届けて「来週も待ってるね」と送り出します。<b>人と人との約束が、毎週教室に足を運ぶ理由になり、勉強の習慣になっていきます。</b></p>
+      <div class="promise">
+        <div class="bubble">🤝</div>
+        <div><b class="zen">「来週も来てね」</b><span>担当講師は日替わりではありません。一人のベテラン講師が、毎週その子の成長を見続けます。</span></div>
+      </div>
+    </section>
+
+    <!-- 03 -->
+    <section class="chapter" id="app">
+      <div class="ch-num">03 — 紙 × デジタル</div>
+      <h2 class="zen"><span class="nw">AIで作る、</span><span class="nw"><em>その子のためのアプリ</em>。</span></h2>
+      <p>KATEぷらでは、講師がAIを活用して学習アプリを作り、<b>ご自宅での復習用</b>として生徒さんにお配りしています。教室は紙で集中、家ではアプリでくり返し練習。AIの登場によって、紙とデジタルをうまく組み合わせることが、とても簡単になりました。</p>
+      <div class="duo">
+        <div class="duo-card paper">
+          <span class="tag">教室で</span>
+          <div class="sheet" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><span class="mark">◎</span></div>
+          <h3 class="zen">紙のプリントで集中</h3>
+          <p>書いて、考えて、講師と答え合わせ。<br>理解を深める時間。</p>
+        </div>
+        <div class="duo-x" aria-hidden="true">×</div>
+        <div class="duo-card app">
+          <span class="tag">家で</span>
+          <div class="phone" aria-hidden="true"><div class="scr">
+            <span class="q">次の英単語の意味は？</span>
+            <span class="w">improve</span>
+            <span class="opt">減らす</span>
+            <span class="opt ok">改善する ✓</span>
+            <span class="opt">比べる</span>
+            <span class="bar"><span></span></span>
+          </div></div>
+          <h3 class="zen">アプリでくり返し復習</h3>
+          <p>教室でやった単元を、<br>スキマ時間に何度でも。</p>
+        </div>
+      </div>
+      <p style="margin-top:30px">極端なことを言えば、<b>一人の生徒さんのためだけに作るアプリ</b>もあります。苦手な単元や、目指している検定・入試に合わせて、その子にぴったりの問題を用意できる。大手の教材ではなかなかできない、<b>オーダーメイドの自宅学習</b>がKATEぷらの強みです。</p>
+      <div class="feat">
+        <div><b>📚 教室と連動</b><span>教室で学んだ単元をそのまま復習。教室と家の学習がつながります。</span></div>
+        <div><b>🎯 オーダーメイド</b><span>苦手や目標に合わせて、一人のためだけのアプリを作ることもあります。</span></div>
+        <div><b>🗂 英語・数学・社会など</b><span>単語、リスニング、計算、歴史・公民など、教科を問わず作成しています。</span></div>
+      </div>
+    </section>
+
+    <!-- 04 -->
+    <section class="chapter">
+      <div class="ch-num">04 — 通いやすさ</div>
+      <h2 class="zen"><span class="nw">教室がある。</span><span class="nw">それでも、<em>通いやすい月謝</em>で。</span></h2>
+      <p>タブレット教材に比べると、教室のある塾はどうしても高くなりがちです。KATEぷらは、教室で講師が見守る学習を、できるだけ通いやすい料金でご提供しています。1教科ごとに月謝がかかる教室も多い中、KATEぷらは5教科まとめて定額です。</p>
+      <div class="points">
+        <div class="pt"><div class="big zen">5教科<br><small>まとめて定額</small></div><span>教科が増えても、<br>追加料金はかかりません。</span></div>
+        <div class="pt"><div class="big zen">教材費<br>0<small>円</small></div><span>プリント代・教材費は<br>すべて月謝に含まれます。</span></div>
+        <div class="pt"><div class="big zen">月額<br>9,900<small>円〜</small></div><span>小学生 9,900円／中学生 13,200円〜<br>高校生 14,300円（各税込）</span></div>
+      </div>
+    </section>
+
+    <div class="cta-block">
+      <a href="pricing.html" class="btn ghost zen">料金プランを見る →</a>
+      <a href="contact.html" class="btn zen">無料学習相談に申し込む →</a>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <img src="assets/logo-wide.png" alt="KATEぷら">
+  <div class="footer__links"><a href="about.html">想い</a><a href="learning.html">学び方</a><a href="method.html">指導法</a><a href="results.html">実績</a><a href="pricing.html">料金</a><a href="faq.html">よくある質問</a><a href="contact.html">お問い合わせ</a></div>
+  <div class="footer__addr">KATEKYO学院 山梨市駅前校　山梨県山梨市上神内川1706 廣瀬ビル1F<br>TEL 0553-20-8008（山梨市駅から徒歩2分）</div>
+  © 2026 KATEぷら — kate-pl.com
+</footer>
+
+</body>
+</html>
