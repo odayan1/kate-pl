@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>料金プラン | KATEぷら</title>
-<meta name="description" content="KATEぷらの料金プラン。小学生9,900円／中学生13,200円〜／高校生14,300円（各税込・月額）。5教科まとめて追加料金なし、教材費0円。">
+<meta name="description" content="KATEぷらの料金プラン。小学生9,900円／中学生16,500円（併用割13,200円）／高校生18,700円（併用割14,300円）（各税込・月額）。5教科まとめて追加料金なし、教材費0円。">
 <link rel="icon" href="assets/logo-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -51,6 +51,10 @@ main{padding:70px 0}
 .price-row .amount .note{font-size:.76rem;color:var(--ink-soft);margin-top:4px}
 @media(max-width:560px){.price-row{grid-template-columns:1fr}.price-row .amount{text-align:left}}
 
+.price-row .amount .note .wari{display:inline-block;background:var(--sun);color:var(--ink);font-size:.72rem;font-weight:900;padding:1px 9px;border-radius:999px;margin-right:4px}
+.wari-box{margin-top:36px;padding:22px 26px;border:2px solid var(--sun);border-radius:14px;font-size:.88rem;background:#fffbe6}
+.wari-box b{display:block;font-size:1rem;margin-bottom:6px;color:var(--deep)}
+.wari-box .small{font-size:.78rem;color:var(--ink-soft)}
 .common-list{margin-top:50px;display:flex;flex-direction:column;gap:18px}
 .common-item{display:flex;gap:16px;align-items:flex-start}
 .common-item .mark{flex-shrink:0;width:30px;height:30px;border-radius:50%;background:var(--kelp);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.95rem;margin-top:2px}
@@ -112,11 +116,11 @@ h1,h2,h3,.faq-q,.arrow-row{word-break:auto-phrase;line-break:strict}
       <div class="price-row">
         <div class="who">
           <h3 class="zen">中学生</h3>
-          <div class="sub">KATEKYO学院利用者は内部生価格｜5教科対応・追加料金なし</div>
+          <div class="sub">学年問わず一律｜5教科対応・追加料金なし</div>
         </div>
         <div class="amount">
-          <div class="yen zen">13,200<span>円〜・税込／月</span></div>
-          <div class="note">内部生 13,200円／外部生 16,500円</div>
+          <div class="yen zen">16,500<span>円・税込／月</span></div>
+          <div class="note"><b class="wari">併用割</b> 13,200円（月3,300円おトク）</div>
         </div>
       </div>
       <div class="price-row">
@@ -125,9 +129,16 @@ h1,h2,h3,.faq-q,.arrow-row{word-break:auto-phrase;line-break:strict}
           <div class="sub">学年問わず一律｜指導時間 19:00〜21:30（融通枠）</div>
         </div>
         <div class="amount">
-          <div class="yen zen">14,300<span>円・税込／月</span></div>
+          <div class="yen zen">18,700<span>円・税込／月</span></div>
+          <div class="note"><b class="wari">併用割</b> 14,300円（月4,400円おトク）</div>
         </div>
       </div>
+    </div>
+
+    <div class="wari-box">
+      <b class="zen">併用割とは？</b>
+      KATEKYO学院の<span class="nw">マンツーマン指導（家庭教師・個別指導）</span>と一緒にKATEぷらを受講される方は、<span class="nw">中学生は月3,300円、</span><span class="nw">高校生は月4,400円</span>おトクな「併用割」料金でご利用いただけます。<br>
+      <span class="small">※小学生は併用の有無にかかわらず一律9,900円です。</span>
     </div>
 
     <div class="common-list">
