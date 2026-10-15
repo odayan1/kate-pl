@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>想い | KATEぷら</title>
-<meta name="description" content="自学学習に、プラチナをプラス。KATEぷらという名前に込めた想いをご紹介します。">
+<meta name="description" content="自学学習に、プラチナをプラス。KATEKYO学院が主催する個別指導塾KATEぷらの4つの想い（プラチナ・プラクティス・プラン・プラス）をご紹介します。">
 <link rel="icon" href="assets/logo-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,6 +15,7 @@
 html{scroll-behavior:smooth}
 body{font-family:'Noto Sans JP',sans-serif;color:var(--ink);background:var(--paper);line-height:1.9;-webkit-font-smoothing:antialiased}
 .zen{font-family:'Zen Kaku Gothic New',sans-serif}
+.nw{display:inline-block}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
 .wrap{max-width:900px;margin:0 auto;padding:0 clamp(20px,5vw,60px)}
@@ -31,14 +32,30 @@ img{max-width:100%;display:block}
 .pg-hero h1{font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:clamp(1.6rem,4.2vw,2.4rem);line-height:1.5}
 .pg-hero p{color:rgba(255,255,255,.82);margin-top:16px;max-width:560px;margin-left:auto;margin-right:auto}
 main{padding:70px 0}
+.host-badge{display:inline-flex;align-items:center;gap:8px;margin-top:22px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:7px 18px;font-size:.82rem;font-weight:700;color:#fff;transition:background .2s,border-color .2s}
+.host-badge b{color:var(--sun)}
+.host-badge:hover{background:rgba(255,255,255,.18);border-color:var(--sun)}
+.p-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:26px}
+.p-chips a{font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:.8rem;letter-spacing:.06em;padding:7px 16px;border-radius:999px;background:var(--sun);color:var(--ink);transition:transform .2s}
+.p-chips a:hover{transform:translateY(-2px)}
 .ed-list{margin-top:0}
-.ed-item{display:grid;grid-template-columns:96px 1fr;gap:30px;padding:34px 0;border-top:1px solid var(--line)}
+.ed-item{display:grid;grid-template-columns:96px 1fr;gap:30px;padding:46px 0;border-top:1px solid var(--line);scroll-margin-top:80px}
 .ed-item:last-child{border-bottom:1px solid var(--line)}
 .ed-num{font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:2.4rem;color:transparent;-webkit-text-stroke:1.5px var(--mid);line-height:1}
 .ed-item:nth-child(2) .ed-num{-webkit-text-stroke-color:var(--kelp-deep)}
-.ed-body h3{font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:1.18rem;margin-bottom:12px}
-.ed-body p{font-size:.92rem;color:var(--ink-soft);max-width:620px}
-@media(max-width:620px){.ed-item{grid-template-columns:1fr;gap:10px}.ed-num{font-size:1.6rem}}
+.ed-item:nth-child(3) .ed-num{-webkit-text-stroke-color:var(--sun-deep)}
+.ed-item:nth-child(4) .ed-num{-webkit-text-stroke-color:var(--deep)}
+.ed-en{display:block;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.22em;color:var(--mid);margin-bottom:4px}
+.ed-body h3{font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:1.22rem;line-height:1.5;margin-bottom:6px}
+.ed-catch{font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1rem;color:var(--deep);margin-bottom:16px}
+.ed-catch em{font-style:normal;background:linear-gradient(transparent 62%,rgba(243,207,31,.55) 62%)}
+.ed-fig{margin:0 0 18px;border-radius:18px;overflow:hidden;background:var(--foam);box-shadow:0 10px 30px rgba(13,74,102,.10);aspect-ratio:16/9}
+.ed-fig img{width:100%;height:100%;object-fit:cover}
+.ed-body p{font-size:.92rem;color:var(--ink-soft);max-width:640px}
+.ed-body p b{color:var(--ink)}
+.ed-link{display:inline-flex;align-items:center;gap:6px;margin-top:16px;font-size:.86rem;font-weight:900;color:var(--mid);border-bottom:2px solid rgba(45,147,184,.3);padding-bottom:2px;transition:color .2s,border-color .2s}
+.ed-link:hover{color:var(--deep);border-color:var(--sun)}
+@media(max-width:620px){.p-chips{display:grid;grid-template-columns:1fr 1fr;max-width:320px;margin-left:auto;margin-right:auto}.p-chips a{text-align:center}.ed-item{grid-template-columns:1fr;gap:10px;padding:36px 0}.ed-num{font-size:1.6rem}.ed-fig{border-radius:14px}}
 .cta-block{margin-top:60px;text-align:center}
 .btn{display:inline-flex;align-items:center;gap:10px;padding:16px 36px;border-radius:999px;font-weight:900;font-size:.92rem;background:var(--sun);color:var(--ink);transition:transform .25s,box-shadow .25s}
 .btn:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(243,207,31,.4)}
@@ -67,25 +84,62 @@ main{padding:70px 0}
 <header class="pg-hero">
   <div class="wrap">
     <span class="sec-kicker">Our Philosophy</span>
-    <h1 class="zen">自学学習に、プラチナをプラス。</h1>
-    <p>家庭教師によるマンツーマン指導は最高の「質」を提供しますが、それだけでは演習の「量」が不足しがち。逆に演習量をこなすだけでは「理解」が置き去りになります。KATEぷらは、家庭教師のノウハウによる質の高い学習管理と、圧倒的な演習量を掛け合わせ、生徒が「わかったつもり」で終わるのを防ぎ、確実に成績を上げるための学習サポートです。</p>
+    <h1 class="zen"><span class="nw">自学学習に、</span><span class="nw">プラチナをプラス。</span></h1>
+    <a href="https://katekyo-yamanashi.com/" target="_blank" rel="noopener" class="host-badge"><b>主催</b>KATEKYO学院（山梨県）の個別指導塾 ↗</a>
+    <p>家庭教師によるマンツーマン指導は最高の「質」を提供しますが、それだけでは演習の「量」が不足しがち。逆に演習量をこなすだけでは「理解」が置き去りになります。KATEぷらは、家庭教師のノウハウによる質の高い学習管理と、圧倒的な演習量を掛け合わせ、生徒が「わかったつもり」で終わるのを防ぎ、確実に成績を上げるための学習サポートです。名前の「ぷら」には、4つの想いを込めました。</p>
+    <div class="p-chips"><a href="#platinum">プラチナ</a><a href="#practice">プラクティス</a><a href="#plan">プラン</a><a href="#plus">プラス</a></div>
   </div>
 </header>
 
 <main>
   <div class="wrap">
     <div class="ed-list">
-      <div class="ed-item">
+      <div class="ed-item" id="platinum">
         <div class="ed-num zen">01</div>
-        <div class="ed-body"><h3 class="zen">プラチナ（PLATINUM）</h3><p>完全1対1の家庭教師を「ゴールド」とするなら、それに次ぐ価値あるサービスとして、ベテラン講師による質の高い指導（プラチナ品質）を提供します。</p></div>
+        <div class="ed-body">
+          <span class="ed-en">PLATINUM</span>
+          <h3 class="zen"><span class="nw">プラチナ —</span> <span class="nw">KATEKYO学院が主催する</span><span class="nw">個別指導塾</span></h3>
+          <p class="ed-catch zen">家庭教師のノウハウを、<em>プラチナ品質</em>で。</p>
+          <figure class="ed-fig"><img src="assets/about-platinum.jpg" alt="ベテラン講師が生徒の隣で丁寧に教えている様子" loading="lazy" width="1100" height="614"></figure>
+          <p>KATEぷらは、山梨県でマンツーマン指導を続けてきた<b>KATEKYO学院が主催する個別指導塾</b>です。完全1対1の家庭教師を「ゴールド」とするなら、それに次ぐ価値あるサービスとして、ベテラン講師による質の高い指導（プラチナ品質）を提供します。</p>
+          <a href="https://katekyo-yamanashi.com/" target="_blank" rel="noopener" class="ed-link">KATEKYO学院（山梨県）公式サイト ↗</a>
+        </div>
       </div>
-      <div class="ed-item">
+      <div class="ed-item" id="practice">
         <div class="ed-num zen">02</div>
-        <div class="ed-body"><h3 class="zen">プラス（PLUS）</h3><p>生徒の自学学習を力強くサポートし、日々の学習に「プラス」の成果をもたらします。「やらされる勉強」から「目指す勉強」へ。ただ課題を与えるだけではなく、「今の単元は何のためにあるか」「ゴールまでの最短経路はどこか」を常に共有し、生徒自身の「やりたい」気持ちを尊重します。</p></div>
+        <div class="ed-body">
+          <span class="ed-en">PRACTICE</span>
+          <h3 class="zen"><span class="nw">プラクティス —</span> <span class="nw">量をこなして、</span><span class="nw">定着させる</span></h3>
+          <p class="ed-catch zen">「わかった」を、<em>「できる」</em>に変える。</p>
+          <figure class="ed-fig"><img src="assets/about-practice.jpg" alt="積み重ねたプリントの横で集中して問題を解く生徒" loading="lazy" width="1100" height="614"></figure>
+          <p>説明を聞いて「わかった」だけでは、テストで解けるようにはなりません。KATEぷらでは紙のプリントで演習の<b>量</b>をしっかりこなし、くり返し手を動かすことで、わかったつもりを「自分で解ける力」として定着させます。</p>
+        </div>
+      </div>
+      <div class="ed-item" id="plan">
+        <div class="ed-num zen">03</div>
+        <div class="ed-body">
+          <span class="ed-en">PLAN</span>
+          <h3 class="zen"><span class="nw">プラン —</span> <span class="nw">基礎を大事に、</span><span class="nw">最短のプランを</span></h3>
+          <p class="ed-catch zen">遠回りしない。でも、<em>土台は飛ばさない</em>。</p>
+          <figure class="ed-fig"><img src="assets/about-plan.jpg" alt="基礎の土台からゴールの旗まで続く最短ルートの道" loading="lazy" width="1100" height="614"></figure>
+          <p>やみくもな勉強はしません。<b>基礎を大事にしながら</b>、「何を・どの順番でやるか」をプロが判断し、ゴールまでの<b>最短のプラン</b>を立てます。「今の単元は何のためにあるか」を共有し、「やらされる勉強」から「目指す勉強」へ。</p>
+          <a href="method.html" class="ed-link">指導法を見る →</a>
+        </div>
+      </div>
+      <div class="ed-item" id="plus">
+        <div class="ed-num zen">04</div>
+        <div class="ed-body">
+          <span class="ed-en">PLUS</span>
+          <h3 class="zen"><span class="nw">プラス —</span> <span class="nw">自学習をサポートする</span><span class="nw">アプリ</span></h3>
+          <p class="ed-catch zen">教室の学びに、家での学びを<em>プラス</em>。</p>
+          <figure class="ed-fig"><img src="assets/about-plus.jpg" alt="自宅で学習アプリを使って復習する生徒" loading="lazy" width="1100" height="614"></figure>
+          <p>講師がAIで作った<b>学習アプリ</b>をお配りし、家での自学習をサポートします。ときには、その子のためだけのオーダーメイドアプリも。教室は紙で集中、家ではアプリで復習――日々の学習に「プラス」の成果をもたらします。</p>
+          <a href="learning.html#app" class="ed-link">学び方を見る →</a>
+        </div>
       </div>
     </div>
     <div class="cta-block">
-      <a href="method.html" class="btn zen">指導法を見る →</a>
+      <a href="contact.html" class="btn zen">無料学習相談はこちら →</a>
     </div>
   </div>
 </main>

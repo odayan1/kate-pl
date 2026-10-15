@@ -109,6 +109,8 @@ a{color:inherit;text-decoration:none}
 }
 .brand-logo img{width:100%;display:block;filter:drop-shadow(0 16px 30px rgba(13,74,102,.24))}
 @keyframes logoWipe{to{clip-path:inset(-20% -5% -20% -5%)}}
+/* phones: the logo fits inside the column, so no nudge — keep it truly centered */
+@media(max-width:768px){.brand-logo{--shift:0%;width:100%;max-width:520px}}
 
 /* ===== Swimmy's finale: a huge "fish" made of many small fish =====
    The whole formation glides slowly left → right; the black Swimmy is the eye.
@@ -253,8 +255,8 @@ a{color:inherit;text-decoration:none}
   <div class="scene__inner">
     <div class="kicker rv">01 <span class="jp">— 想い</span> Philosophy</div>
     <h2 class="zen rv"><span class="nw">自学学習に、</span><span class="nw"><em>プラチナ</em>をプラス。</span></h2>
-    <span class="eng rv">Quality × Quantity</span>
-    <p class="lead rv"><span class="nw">答えを渡すだけの勉強では、力はつきません。</span><span class="nw">「質」の高い指導と「量」をこなす演習で、</span><span class="nw">自分でたどり着く力を育てます。</span></p>
+    <span class="eng rv">Platinum · Practice · Plan · Plus</span>
+    <p class="lead rv"><span class="nw">KATEKYO学院が主催する個別指導塾。</span><span class="nw">「質」の高い指導、「量」をこなす演習、</span><span class="nw">基礎を大事にした最短のプラン、</span><span class="nw">そして自学習アプリで、</span><span class="nw">自分でたどり着く力を育てます。</span></p>
     <a href="about.html" class="deep-link rv">想いを読む →</a>
   </div>
 </section>
@@ -344,7 +346,7 @@ a{color:inherit;text-decoration:none}
     <h2 class="zen rv">もっと深く、知ってください。</h2>
     <span class="eng rv">Explore KATEぷら</span>
     <div class="dive-list rv">
-      <a href="about.html" class="dive-item"><span class="dive-num zen">01</span><span class="dive-body"><b class="zen">想い</b><span>自学学習に、プラチナをプラス。</span></span><span class="dive-arrow">→</span></a>
+      <a href="about.html" class="dive-item"><span class="dive-num zen">01</span><span class="dive-body"><b class="zen">想い</b><span>プラチナ・プラクティス・プラン・プラス。</span></span><span class="dive-arrow">→</span></a>
       <a href="learning.html" class="dive-item"><span class="dive-num zen">02</span><span class="dive-body"><b class="zen">学び方</b><span>教室は紙で集中、家ではAIアプリで復習。</span></span><span class="dive-arrow">→</span></a>
       <a href="method.html" class="dive-item"><span class="dive-num zen">03</span><span class="dive-body"><b class="zen">指導法</b><span>敷かれたレールに乗るだけで伸びる仕組み。</span></span><span class="dive-arrow">→</span></a>
       <a href="results.html" class="dive-item"><span class="dive-num zen">04</span><span class="dive-body"><b class="zen">実績</b><span>プロの家庭教師×演習だから伸びる。</span></span><span class="dive-arrow">→</span></a>
