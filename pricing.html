@@ -55,6 +55,26 @@ main{padding:70px 0}
 .wari-box{margin-top:36px;padding:22px 26px;border:2px solid var(--sun);border-radius:14px;font-size:.88rem;background:#fffbe6}
 .wari-box b{display:block;font-size:1rem;margin-bottom:6px;color:var(--deep)}
 .wari-box .small{font-size:.78rem;color:var(--ink-soft)}
+.tlink{color:var(--mid);font-weight:700;text-decoration:underline}
+.time-box{margin-top:50px;padding:30px clamp(18px,4vw,34px);background:var(--foam);border-radius:16px;scroll-margin-top:90px}
+.time-box h2{font-weight:900;font-size:clamp(1.1rem,3vw,1.35rem);color:var(--deep);margin-bottom:10px}
+.time-box .lead{font-size:.92rem}
+.time-box .lead b{color:var(--deep)}
+.tl{margin-top:24px;background:#fff;border-radius:12px;padding:18px 16px 14px}
+.tl-scale,.tl-zone,.tl-row{margin-left:110px}
+.tl-scale{display:flex;justify-content:space-between;font-size:.7rem;font-weight:700;color:var(--ink-soft);margin-bottom:4px}
+.tl-zone{position:relative;height:24px;margin-bottom:8px}
+.tl-zone__in{position:absolute;left:0;width:40%;height:100%;background:var(--sun);border-radius:6px;font-size:.7rem;font-weight:900;display:flex;align-items:center;justify-content:center;white-space:nowrap}
+.tl-row{position:relative;display:flex;align-items:center;height:30px;margin-bottom:6px}
+.tl-lab{position:absolute;left:-110px;width:104px;font-size:.76rem;font-weight:700;text-align:right}
+.tl-track{position:relative;flex:1;height:22px;background:rgba(13,74,102,.06);border-radius:6px}
+.tl-bar{position:absolute;top:0;height:100%;background:var(--mid);color:#fff;border-radius:6px;font-size:.7rem;font-weight:700;display:flex;align-items:center;justify-content:center;white-space:nowrap}
+.tl-bar.late{background:var(--ink-soft)}
+@media(max-width:560px){.tl-scale,.tl-zone,.tl-row{margin-left:78px}.tl-lab{left:-78px;width:72px;font-size:.66rem}.tl-scale{font-size:.6rem}.tl-bar,.tl-zone__in{font-size:.6rem}}
+.time-points{list-style:none;margin-top:18px;display:flex;flex-direction:column;gap:10px;font-size:.86rem}
+.time-points li{padding-left:18px;position:relative}
+.time-points li::before{content:"";position:absolute;left:0;top:.7em;width:8px;height:8px;border-radius:50%;background:var(--kelp)}
+.time-points b{color:var(--ink)}
 .common-list{margin-top:50px;display:flex;flex-direction:column;gap:18px}
 .common-item{display:flex;gap:16px;align-items:flex-start}
 .common-item .mark{flex-shrink:0;width:30px;height:30px;border-radius:50%;background:var(--kelp);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.95rem;margin-top:2px}
@@ -116,7 +136,7 @@ h1,h2,h3,.faq-q,.arrow-row{word-break:auto-phrase;line-break:strict}
       <div class="price-row">
         <div class="who">
           <h3 class="zen">中学生</h3>
-          <div class="sub">学年問わず一律｜5教科対応・追加料金なし</div>
+          <div class="sub">学年問わず一律｜指導時間 19:00〜21:30のうち90分（<a href="#time" class="tlink">通い方</a>）</div>
         </div>
         <div class="amount">
           <div class="yen zen">16,500<span>円・税込／月</span></div>
@@ -126,7 +146,7 @@ h1,h2,h3,.faq-q,.arrow-row{word-break:auto-phrase;line-break:strict}
       <div class="price-row">
         <div class="who">
           <h3 class="zen">高校生</h3>
-          <div class="sub">学年問わず一律｜指導時間 19:00〜21:30（融通枠）</div>
+          <div class="sub">学年問わず一律｜指導時間 19:00〜21:30のうち90分（<a href="#time" class="tlink">通い方</a>）</div>
         </div>
         <div class="amount">
           <div class="yen zen">18,700<span>円・税込／月</span></div>
@@ -134,6 +154,26 @@ h1,h2,h3,.faq-q,.arrow-row{word-break:auto-phrase;line-break:strict}
         </div>
       </div>
     </div>
+
+    <section class="time-box" id="time">
+      <h2 class="zen">中学生・高校生の通い方 <span class="nw">― 来る時間は自由です</span></h2>
+      <p class="lead">教室は <b>19:00〜21:30</b> に開いています。<span class="nw"><b>19:00〜20:00のあいだなら、</b></span><span class="nw">好きな時間に来てOK。</span><span class="nw">来た時間から<b>90分間</b>指導します。</span><br>部活や習い事で遅くなる日も、あわてずに通えます。</p>
+
+      <div class="tl">
+        <div class="tl-scale"><span>19:00</span><span>19:30</span><span>20:00</span><span>20:30</span><span>21:00</span><span>21:30</span></div>
+        <div class="tl-zone"><div class="tl-zone__in">来校OK</div></div>
+        <div class="tl-row"><span class="tl-lab">19:00に来たら</span><div class="tl-track"><div class="tl-bar" style="left:0;width:60%">19:00〜20:30</div></div></div>
+        <div class="tl-row"><span class="tl-lab">19:30に来たら</span><div class="tl-track"><div class="tl-bar" style="left:20%;width:60%">19:30〜21:00</div></div></div>
+        <div class="tl-row"><span class="tl-lab">20:00に来たら</span><div class="tl-track"><div class="tl-bar" style="left:40%;width:60%">20:00〜21:30</div></div></div>
+        <div class="tl-row"><span class="tl-lab">20:00より後</span><div class="tl-track"><div class="tl-bar late" style="left:60%;width:40%">21:30で終了</div></div></div>
+      </div>
+
+      <ul class="time-points">
+        <li><b>20:00までに来れば、しっかり90分。</b>19:00〜20:00のどのタイミングで来ても、指導時間は同じ90分です。</li>
+        <li><b>20:00より後に来てもOK。</b>ただし教室は21:30で終わるため、その日の指導時間は短くなります。</li>
+        <li><b>小学生は 17:30〜18:30 の60分</b>（開始時間は固定です）。</li>
+      </ul>
+    </section>
 
     <div class="wari-box">
       <b class="zen">併用割とは？</b>
