@@ -34,9 +34,25 @@ main{padding:60px 0}
 .contact-info{display:flex;gap:40px;margin-bottom:10px;flex-wrap:wrap}
 .contact-info div b{display:block;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;color:var(--mid);font-size:.78rem;letter-spacing:.08em;margin-bottom:6px}
 .contact-info div span{color:var(--ink-soft);font-size:.92rem}
-.form-shell{background:var(--foam);border-radius:18px;overflow:hidden;margin-top:36px}
-.form-shell iframe{width:100%;height:1200px;border:none;display:block}
-@media(max-width:600px){.form-shell iframe{height:1300px}}
+.form-shell{background:var(--foam);border-radius:18px;margin-top:36px;padding:clamp(22px,4vw,40px)}
+.cf{display:grid;gap:22px}
+.cf__row label,.cf__row legend{display:block;font-weight:700;font-size:.92rem;margin-bottom:8px}
+.cf__req{display:inline-block;background:var(--sun);color:var(--ink);font-size:.68rem;font-weight:900;padding:1px 8px;border-radius:999px;margin-left:8px;vertical-align:2px}
+.cf__opt{display:inline-block;color:var(--ink-soft);font-size:.72rem;font-weight:500;margin-left:8px}
+.cf input[type=text],.cf input[type=email],.cf input[type=tel],.cf select,.cf textarea{width:100%;font:inherit;font-size:16px;padding:12px 14px;border:1.5px solid var(--line);border-radius:12px;background:#fff;color:var(--ink)}
+.cf input:focus,.cf select:focus,.cf textarea:focus{outline:none;border-color:var(--mid);box-shadow:0 0 0 3px rgba(45,147,184,.15)}
+.cf textarea{min-height:150px;resize:vertical}
+.cf fieldset{border:none}
+.cf__choices{display:flex;flex-wrap:wrap;gap:10px}
+.cf__choices label{display:flex;align-items:center;gap:8px;margin:0;font-weight:500;background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:8px 16px;cursor:pointer}
+.cf__choices input{accent-color:var(--mid)}
+.cf__note{color:var(--ink-soft);font-size:.8rem}
+.cf__hp{position:absolute;left:-9999px}
+.cf__btn{justify-self:center;background:var(--sun);color:var(--ink);font:inherit;font-weight:900;font-size:1rem;border:none;border-radius:999px;padding:14px 48px;cursor:pointer;box-shadow:0 4px 0 var(--sun-deep)}
+.cf__btn:disabled{opacity:.6;cursor:wait}
+.cf__msg{display:none;text-align:center;padding:30px 10px}
+.cf__msg h2{font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;color:var(--deep);font-size:1.3rem;margin-bottom:10px}
+.cf__err{display:none;color:#b42318;font-weight:700;text-align:center;font-size:.9rem}
 .footer{background:#06212f;color:rgba(255,255,255,.55);padding:36px 0;text-align:center;font-size:.8rem}
 .footer img{height:30px;margin:0 auto 12px;filter:brightness(0) invert(1);opacity:.8}
 .footer__links{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 20px;margin-bottom:14px;font-weight:700}
@@ -77,7 +93,54 @@ h1,h2,h3,.faq-q,.arrow-row{word-break:auto-phrase;line-break:strict}
       <div><b class="zen">アクセス</b><span>山梨市駅から徒歩2分</span></div>
     </div>
     <div class="form-shell">
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe1260PplNLNBY-toj-vJQ4QTdlzC9313KBa71L036RT121HQ/viewform?embedded=true" title="無料学習相談・お問い合わせフォーム">読み込んでいます…</iframe>
+      <form class="cf" id="contactForm" novalidate>
+        <fieldset class="cf__row">
+          <legend>お問い合わせの種類<span class="cf__req">必須</span></legend>
+          <div class="cf__choices">
+            <label><input type="radio" name="お問い合わせの種類" value="無料学習相談の申し込み" required checked>無料学習相談の申し込み</label>
+            <label><input type="radio" name="お問い合わせの種類" value="無料体験について">無料体験について</label>
+            <label><input type="radio" name="お問い合わせの種類" value="その他のご質問">その他のご質問</label>
+          </div>
+        </fieldset>
+        <div class="cf__row">
+          <label for="cf-parent">保護者さまのお名前<span class="cf__req">必須</span></label>
+          <input type="text" id="cf-parent" name="保護者のお名前" autocomplete="name" required>
+        </div>
+        <div class="cf__row">
+          <label for="cf-student">お子さまのお名前<span class="cf__opt">任意</span></label>
+          <input type="text" id="cf-student" name="お子さまのお名前">
+        </div>
+        <div class="cf__row">
+          <label for="cf-grade">学年<span class="cf__req">必須</span></label>
+          <select id="cf-grade" name="学年" required>
+            <option value="">選択してください</option>
+            <option>小学4年生</option><option>小学5年生</option><option>小学6年生</option>
+            <option>中学1年生</option><option>中学2年生</option><option>中学3年生</option>
+            <option>高校1年生</option><option>高校2年生</option><option>高校3年生</option>
+            <option>その他</option>
+          </select>
+        </div>
+        <div class="cf__row">
+          <label for="cf-email">メールアドレス<span class="cf__req">必須</span></label>
+          <input type="email" id="cf-email" name="email" autocomplete="email" inputmode="email" required>
+        </div>
+        <div class="cf__row">
+          <label for="cf-tel">お電話番号<span class="cf__opt">任意・お電話でのご連絡をご希望の方</span></label>
+          <input type="tel" id="cf-tel" name="お電話番号" autocomplete="tel" inputmode="tel">
+        </div>
+        <div class="cf__row">
+          <label for="cf-msg">ご質問・ご相談の内容<span class="cf__opt">任意</span></label>
+          <textarea id="cf-msg" name="ご質問・ご相談の内容" placeholder="例）中学2年生です。数学が苦手なので相談したいです。平日の夕方が都合がよいです。"></textarea>
+        </div>
+        <input type="text" name="_honey" class="cf__hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <p class="cf__note">ご記入いただいた内容は、このお問い合わせへのご連絡にのみ使用します。</p>
+        <p class="cf__err" id="cfErr"></p>
+        <button type="submit" class="cf__btn" id="cfBtn">送信する</button>
+      </form>
+      <div class="cf__msg" id="cfDone">
+        <h2>送信しました。ありがとうございます。</h2>
+        <p>内容を確認のうえ、担当よりご連絡いたします。<br>お急ぎの場合はお電話（0553-20-8008）でもお受けしています。</p>
+      </div>
     </div>
   </div>
 </main>
@@ -88,6 +151,40 @@ h1,h2,h3,.faq-q,.arrow-row{word-break:auto-phrase;line-break:strict}
   <div class="footer__addr">KATEKYO学院 山梨市駅前校　山梨県山梨市上神内川1706 廣瀬ビル1F<br>TEL 0553-20-8008（山梨市駅から徒歩2分）</div>
   © 2026 KATEぷら — kate-pl.com
 </footer>
+
+<script>
+(function(){
+  var ENDPOINT = "https://formsubmit.co/ajax/50c4a2d8a8381590171cf64628945ef0";
+  var form = document.getElementById("contactForm"), btn = document.getElementById("cfBtn"), err = document.getElementById("cfErr");
+  function fail(msg){ err.textContent = msg; err.style.display = "block"; btn.disabled = false; btn.textContent = "送信する"; }
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    err.style.display = "none";
+    if (!form.checkValidity()) {
+      var bad = form.querySelector(":invalid");
+      fail(bad && bad.type === "email" && bad.value ? "メールアドレスの形式をご確認ください。" : "必須の項目をご入力ください。");
+      if (bad) bad.focus();
+      return;
+    }
+    var data = {};
+    new FormData(form).forEach(function(v, k){ data[k] = v; });
+    if (data._honey) return;
+    data._subject = "【KATEぷら】" + data["お問い合わせの種類"] + "（" + data["学年"] + "・" + data["保護者のお名前"] + " 様）";
+    data._replyto = data.email;
+    data._template = "table";
+    data._captcha = "false";
+    btn.disabled = true; btn.textContent = "送信中…";
+    fetch(ENDPOINT, {method: "POST", headers: {"Content-Type": "application/json", "Accept": "application/json"}, body: JSON.stringify(data)})
+      .then(function(r){ return r.json(); })
+      .then(function(r){
+        if (String(r.success) !== "true") throw new Error(r.message || "error");
+        form.style.display = "none";
+        document.getElementById("cfDone").style.display = "block";
+      })
+      .catch(function(){ fail("送信できませんでした。時間をおいてもう一度お試しいただくか、お電話（0553-20-8008）でお問い合わせください。"); });
+  });
+})();
+</script>
 
 </body>
 </html>
